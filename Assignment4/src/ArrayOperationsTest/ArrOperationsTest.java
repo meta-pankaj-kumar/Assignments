@@ -19,7 +19,7 @@ package ArrayOperationsTest;
 import static org.junit.Assert.*;
 import org.junit.Test;
 public class ArrOperationsTest {
-	ArrayOperations.ArrOperations object=new ArrayOperations.ArrOperations();
+	ArrayOperations.ArrOperations arrayOperations=new ArrayOperations.ArrOperations();
 	/*
 	 * @param Null
 	 * @return Null
@@ -29,15 +29,15 @@ public class ArrOperationsTest {
 	public void testMirrorSection()	{
 		System.out.println("I am in test mirror");
 		int input1[]= {1,1,1,1,1,1};
-		assertEquals(6,object.mirrorSection(input1));
+		assertEquals(6,arrayOperations.mirrorSection(input1));
 		int input2[]= {1,2,3,4,5,3,2,1};
-		assertEquals(3,object.mirrorSection(input2));
+		assertEquals(3,arrayOperations.mirrorSection(input2));
 		int input3[]= {4,4,4};
-		assertEquals(3,object.mirrorSection(input3));
+		assertEquals(3,arrayOperations.mirrorSection(input3));
 		int input4[]= {1,2,4,5,2,1,4};
-		assertEquals(2,object.mirrorSection(input4));
+		assertEquals(2,arrayOperations.mirrorSection(input4));
 		int input5[]= {1,2,3,5,4,3,2,1,4,5};
-		assertEquals(3,object.mirrorSection(input5));			
+		assertEquals(3,arrayOperations.mirrorSection(input5));			
 	}
 	/*
 	 * @param Null
@@ -48,7 +48,7 @@ public class ArrOperationsTest {
 	public void testMirrorSectionAssertion() {
 		System.out.println("I am in test mirror Assertion");
 		int input1[]={};
-		object.mirrorSection(input1);
+		arrayOperations.mirrorSection(input1);
 	}
 	/*
 	 * @param Null
@@ -59,13 +59,13 @@ public class ArrOperationsTest {
 	public void testClumpsCount() {
 		System.out.println("I am in clumps count");
 		int input1[]= {1};
-		assertEquals(0,object.clumpsCount(input1));
+		assertEquals(0,arrayOperations.clumpsCount(input1));
 		int input2[]= {1,2,3,4,5,3,2,1};
-		assertEquals(0,object.clumpsCount(input2));
+		assertEquals(0,arrayOperations.clumpsCount(input2));
 		int input3[]= {4,4,4};
-		assertEquals(1,object.clumpsCount(input3));
+		assertEquals(1,arrayOperations.clumpsCount(input3));
 		int input4[]= {9,1,1,1,2,1,4,4};
-		assertEquals(2,object.clumpsCount(input4));
+		assertEquals(2,arrayOperations.clumpsCount(input4));
 	}
 	/*
 	 * @param Null
@@ -76,7 +76,7 @@ public class ArrOperationsTest {
 	public void testClumpsCountAssertion() {
 		System.out.println("I am in test clumps Assertion");
 		int input1[]={};
-		object.clumpsCount(input1);
+		arrayOperations.clumpsCount(input1);
 	}
 	/*
 	 * @param Null
@@ -87,10 +87,10 @@ public class ArrOperationsTest {
 	public void testFixXY() {
 		System.out.println("I am in fix xy");
 		int input1[]= {1,2,3};
-		assertArrayEquals(input1,object.fixXY(input1, 4, 5));
+		assertArrayEquals(input1,arrayOperations.fixXY(input1, 4, 5));
 		int input2[]= {1,2,4,7,6,5,7,5,3,4,9};
 		int input2Output[]= {1,2,4,5,6,7,7,9,3,4,5};
-		assertArrayEquals(input2Output,object.fixXY(input2, 4, 5));
+		assertArrayEquals(input2Output,arrayOperations.fixXY(input2, 4, 5));
 	}
 	/*
 	 * @param Null
@@ -101,7 +101,7 @@ public class ArrOperationsTest {
 	public void testFixXYAssertion1() {
 		System.out.println("I am in fix xy assertion 1");
 		int input1[]={};
-		object.fixXY(input1, 4, 5);
+		arrayOperations.fixXY(input1, 4, 5);
 	}
 	/*
 	 * @param Null
@@ -112,7 +112,7 @@ public class ArrOperationsTest {
 	public void testFixXYAssertion2() {
 		System.out.println("I am in fix xy assertion 2");
 		int input1[]= {1,4,4};
-		object.fixXY(input1, 4, 5);
+		arrayOperations.fixXY(input1, 4, 5);
 	}
 	/*
 	 * @param Null
@@ -123,7 +123,7 @@ public class ArrOperationsTest {
 	public void testFixXYAssertion3() {
 		System.out.println("I am in fix xy assertion 3");
 		int input1[]= {1,4,4};
-		object.fixXY(input1, 4, 4);
+		arrayOperations.fixXY(input1, 4, 4);
 	}
 	/*
 	 * @param Null
@@ -134,7 +134,7 @@ public class ArrOperationsTest {
 	public void testFixXYAssertion4() {
 		System.out.println("I am in fix xy assertion 4");
 		int input1[]= {1,4,9,8,5,4,6,5,8,5};
-		object.fixXY(input1, 4, 5);
+		arrayOperations.fixXY(input1, 4, 5);
 	}
 	/*
 	 * @param Null
@@ -145,7 +145,7 @@ public class ArrOperationsTest {
 	public void testFixXYAssertion5() {
 		System.out.println("I am in fix xy assertion 5");
 		int input1[]= {1,5,4};
-		object.fixXY(input1, 4, 5);
+		arrayOperations.fixXY(input1, 4, 5);
 	}
 	
 	/*
@@ -157,11 +157,11 @@ public class ArrOperationsTest {
 	public void testSplit() {
 		System.out.println("I am in Split");
 		int input1[]= {1,2,3};
-		assertEquals(2,object.splitArray(input1));
+		assertEquals(2,arrayOperations.splitArray(input1));
 		int input2[]= {1,1,1,1,1};
-		assertEquals(-1,object.splitArray(input2));
+		assertEquals(-1,arrayOperations.splitArray(input2));
 		int input3[]= {0,0,0};
-		assertEquals(0,object.splitArray(input3));
+		assertEquals(0,arrayOperations.splitArray(input3));
 	}
 	/*
 	 * @param Null
@@ -172,6 +172,6 @@ public class ArrOperationsTest {
 	public void testSplitAssertion() {
 		System.out.println("I am in split assertion ");
 		int input1[]={};
-		object.splitArray(input1);
+		arrayOperations.splitArray(input1);
 	}
 }

@@ -1,11 +1,11 @@
 /*
- * Class to perform certain operations on inputted Array
+ * Class to perform certain operations on inputed Array
  * Methods
  * 		mirrorSection - To compute and return the largest mirror section's size found in the input array
- * 		clumpsCount - To compute and return the total number of clumps found in the inputted array
- * 		fixXY - To swap the values of Y such that every X is followed by a Y in the inputted array
+ * 		clumpsCount - To compute and return the total number of clumps found in the inputed array
+ * 		fixXY - To swap the values of Y such that every X is followed by a Y in the inputed array
  * 		splitArray - To compute and return the position from where array can be divided into two equal halves 
- * 						i.e. sum of left sub array is equal to sum of right sub array from the inputted array
+ * 						i.e. sum of left sub array is equal to sum of right sub array from the inputed array
  * Assumption Input Array will contain only positive Integers
  */
 package ArrayOperations;
@@ -77,6 +77,20 @@ public class ArrOperations {
 				count++;
 			}
 		}
+		/*for(int firstIndex=0;firstIndex<array.length-1;firstIndex++){
+			if(array[firstIndex]==array[firstIndex+1])
+			{
+				flag1=1;
+				flag2++;
+				if(flag2==1){
+					count++;flag1=0;}
+			}
+			else if((flag1==1)&&(flag2!=1))
+			{
+				flag1=0;
+				count++;
+			}
+		}*/
 		return count;
 	}
 	/*
