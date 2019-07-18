@@ -17,9 +17,10 @@ public class ArrOperations {
 	 * Assumption Input Array will contain only positive Integers
 	 */
 	public int mirrorSection(int array[])throws AssertionError	{
-		int firstIndex,secondIndex,flag=0,increasingIndex,decreasingIndex,count=0,mirrorCount=0;;
+		int firstIndex,secondIndex,flag=0,increasingIndex,decreasingIndex,count=0,mirrorCount=0;
+		//int l=array.length;
 		if(array.length==0) {
-			throw new AssertionError("Null Array Caught in mirror section"); 
+			throw new AssertionError("Empty Array Caught in mirror section"); 
 		}
 		for(firstIndex=0;firstIndex<array.length;firstIndex++)	{
 			for(secondIndex=firstIndex+1;secondIndex<array.length;secondIndex++)	{
