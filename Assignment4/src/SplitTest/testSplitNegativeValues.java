@@ -10,15 +10,12 @@ import ArrayOperations.ArrOperations;
 /*
  * @param Null
  * @return Null
- * Testing for neagtive test cases
+ * Testing for negative test cases
  */
-public class testSplitNegativeValues
-{
+public class testSplitNegativeValues{
 	ArrOperations arrOperations=new ArrOperations();
-	
 	@Test(expected = AssertionError.class)
-	public void testB() 
-	{
+	public void testB() {
 		int input1[]={};
 		arrOperations.splitArray(input1);
 	}

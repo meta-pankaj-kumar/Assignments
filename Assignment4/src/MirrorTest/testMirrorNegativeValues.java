@@ -12,8 +12,7 @@ import ArrayOperations.ArrOperations;
  * @return Null
  * Testing for neagtive test cases
  */
-public class testMirrorNegativeValues
-{
+public class testMirrorNegativeValues {
 	ArrOperations arrOperations=new ArrOperations();
 	@Test(expected = AssertionError.class)
 	public void testB() {

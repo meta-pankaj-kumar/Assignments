@@ -12,15 +12,11 @@ import org.junit.Test;
  * Testing for neagtive test cases
  */
 import ArrayOperations.ArrOperations;
-public class testFixXYNegativeValuesBlankArray
-{
+public class testFixXYNegativeValuesBlankArray{
 	ArrOperations arrayOperations = new ArrOperations();
-	
 	@Test(expected = AssertionError.class)
 	public void testF() {
-		System.out.println("I am in fix xy assertion 1");
 		int input1[]={};
 		arrayOperations.fixXY(input1, 4, 5);
 	}
-
 }

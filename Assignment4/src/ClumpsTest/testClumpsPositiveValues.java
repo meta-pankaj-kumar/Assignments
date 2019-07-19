@@ -13,32 +13,29 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
 /*
 * @param Null
 * @return Null
 * Testing for positive test cases
 */
 @RunWith(Parameterized.class)
-public class testClumpsPositiveValues
-{
+public class testClumpsPositiveValues{
 	private static int expected;
 	private static int array[];
-	
 	public testClumpsPositiveValues(int expected,int array[])	{
 		testClumpsPositiveValues.expected=expected;
 		testClumpsPositiveValues.array=array;
 	}
 	ArrayOperations.ArrOperations arrayOperations;
-	
 	@Before
 	public void Setup()	{
 		arrayOperations=new ArrayOperations.ArrOperations();
 	}
-	
 	@Parameters
 	public static Collection<Object[]> testData()	{
 		Object[][] data=new Object[][]
+				//   expected 		   input array						
+				//    Value										
 				{	{	0	,	new int[] {1}	},
 					{	0	,	new int[] {1,2,3,4,5,3,2,1}	},
 					{	1	,	new int[] {4,4,4}	},

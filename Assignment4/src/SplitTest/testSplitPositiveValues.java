@@ -20,32 +20,34 @@ import org.junit.runners.Parameterized.Parameters;
 * Testing for positive test cases
 */
 @RunWith(Parameterized.class)
-public class testSplitPositiveValues
-{
+public class testSplitPositiveValues{
 	private static int expected;
 	private static int array[];
-	
 	public testSplitPositiveValues(int expected,int array[])	{
 		testSplitPositiveValues.expected=expected;
 		testSplitPositiveValues.array=array;
 	}
 	ArrayOperations.ArrOperations arrayOperations;
-	
 	@Before
 	public void Setup()	{
 		arrayOperations=new ArrayOperations.ArrOperations();
 	}
-	static int i;
 	@Parameters
-	public static Collection<Object[]> testData()
-	{
-		Object[][] data=new Object[][] {{6,new int[] {1,1,1,1,1,1}},{3,new int[] {1,2,3,4,5,3,2,1}},{3,new int[] {4,4,4}},{2,new int[] {1,2,4,5,2,1,4}},{3,new int[] {1,2,3,5,4,3,2,1,4,5}}};
+	public static Collection<Object[]> testData(){
+		Object[][] data=new Object[][] 
+
+				//   expected 		   input array						
+				//    Value										
+				{	{	 3	,	new int[] {1,1,1,1,1,1}			},
+					{	-1	,	new int[] {1,2,3,4,5,3,2,1}		},
+					{	-1	,	new int[] {4,4,4}				},	
+					{	-1	,	new int[] {1,2,4,5,2,1,4}		},
+					{	 5	,	new int[] {1,2,3,5,4,3,2,1,4,5}	}	};
 		return Arrays.asList(data);
 	}
 	@Test
-	public void tester()
-	{
-		int actual=arrayOperations.mirrorSection(array);
+	public void tester(){
+		int actual=arrayOperations.splitArray(array);
 		assertEquals(expected,actual);
 	}
 }

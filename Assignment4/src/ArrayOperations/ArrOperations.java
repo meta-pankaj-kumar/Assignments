@@ -78,16 +78,15 @@ public class ArrOperations {
 				count++;
 			}
 		}
+		//Second Logic
 		/*for(int firstIndex=0;firstIndex<array.length-1;firstIndex++){
-			if(array[firstIndex]==array[firstIndex+1])
-			{
+			if(array[firstIndex]==array[firstIndex+1]){
 				flag1=1;
 				flag2++;
 				if(flag2==1){
 					count++;flag1=0;}
 			}
-			else if((flag1==1)&&(flag2!=1))
-			{
+			else if((flag1==1)&&(flag2!=1)){
 				flag1=0;
 				count++;
 			}

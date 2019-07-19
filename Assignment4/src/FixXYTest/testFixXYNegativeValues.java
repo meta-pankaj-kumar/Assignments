@@ -20,14 +20,11 @@ import org.junit.runners.Parameterized.Parameters;
 * Testing for negative test cases
 */
 @RunWith(Parameterized.class)
-public class testFixXYNegativeValues
-{
+public class testFixXYNegativeValues{
 	private static int expected;
 	private static int array[];
 	private static int xValue;
 	private static int yValue;
-
-	
 	public testFixXYNegativeValues(int expected,int array[],int xValue,int yValue)	{
 		testFixXYNegativeValues.expected=expected;
 		testFixXYNegativeValues.array=array;
@@ -35,15 +32,15 @@ public class testFixXYNegativeValues
 		testFixXYNegativeValues.yValue=yValue;
 	}
 	ArrayOperations.ArrOperations arrayOperations;
-	
 	@Before
 	public void Setup()	{
 		arrayOperations=new ArrayOperations.ArrOperations();
 	}
 	@Parameters
-	public static Collection<Object[]> testData()
-	{
+	public static Collection<Object[]> testData() {
 		Object[][] data=new Object[][]
+				//   expected 		input array						X		Y
+				//    Value										  Value	  Value
 				{	{	0	,	new int[] {1,4,4}				,	4	,	5	},
 					{	0	,	new int[] {1,4,4}				,	4	,	4	},
 					{	0	,	new int[] {1,4,9,8,5,4,6,5,8,5}	,	4	,	5	},
@@ -51,8 +48,7 @@ public class testFixXYNegativeValues
 		return Arrays.asList(data);
 	}
 	@Test(expected=AssertionError.class)
-	public void tester()
-	{
+	public void tester(){
 		int actual[]=arrayOperations.fixXY(array, xValue, yValue);
 		assertEquals(expected,actual);
 	}
