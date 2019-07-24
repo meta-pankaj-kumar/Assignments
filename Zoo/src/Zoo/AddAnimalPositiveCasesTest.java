@@ -1,0 +1,101 @@
+/*
+ * Test Class working on JUnit 4
+ */
+package Zoo;
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import Animal.Animal;
+import Animal.Aqua.Carnivorous.Shark;
+import Animal.Aqua.Herbivorous.SurgeonFish;
+import Animal.Aqua.Omnivorous.AngelFish;
+import Animal.Bird.Carnivorous.Eagle;
+import Animal.Bird.Herbivorous.Duck;
+import Animal.Bird.Omnivorous.Peacock;
+import Animal.Mammal.Carnivorous.Lion;
+import Animal.Mammal.Herbivorous.Deer;
+import Animal.Mammal.Herbivorous.Elephant;
+import Animal.Mammal.Omnivorous.Bear;
+import Animal.Reptile.Carnivorous.Crocodile;
+
+public class AddAnimalPositiveCasesTest {
+
+	@SuppressWarnings("unused")
+	private Animal animal;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		Cage cage1 = new Cage(3,"Mammal",1,"Carnivorous");
+		Cage cage2 = new Cage(3,"Mammal",2,"Herbivorous");
+		Cage cage3 = new Cage(3,"Mammal",3,"Omnivorous");
+		Cage cage4 = new Cage(3,"Bird",4,"Carnivorous");
+		Cage cage5 = new Cage(3,"Bird",5,"Herbivorous");
+		Cage cage6 = new Cage(3,"Bird",6,"Omnivorous");
+		Cage cage7 = new Cage(3,"Reptile",7,"Carnivorous");
+		Cage cage8 = new Cage(3,"Aqua",8,"Carnivorous");
+		Cage cage9 = new Cage(3,"Aqua",9,"Herbivorous");
+		Cage cage10 = new Cage(3,"Aqua",10,"Omnivorous");
+		Cage cage11 = new Cage(3,"Mammal",11,"Herbivorous");
+		
+		Zoo.addCage(cage1);
+		Zoo.addCage(cage2);
+		Zoo.addCage(cage3);
+		Zoo.addCage(cage4);
+		Zoo.addCage(cage5);
+		Zoo.addCage(cage6);
+		Zoo.addCage(cage7);
+		Zoo.addCage(cage8);
+		Zoo.addCage(cage9);
+		Zoo.addCage(cage10);
+		Zoo.addCage(cage11);
+	}
+	
+	/*
+	 * @param null
+	 * @return null
+	 */
+	@Test
+	public void testAddAnimal() {
+		try{
+			Animal animal1 =new Lion("AnimalLion",10,150);
+			assertTrue(Zoo.addAnimal(animal1));
+			
+			Animal animal2 =new Lion("Animal1Lion",9,150);
+			assertTrue(Zoo.addAnimal(animal2));
+			
+			Animal animal3 =new Deer("AnimalDeer",5,70);
+			assertTrue(Zoo.addAnimal(animal3));
+			
+			Animal animal4 =new Elephant("AnimalElephant",25,300);
+			assertTrue(Zoo.addAnimal(animal4));
+			
+			Animal animal5 =new Bear("AnimalBear",10,150);
+			assertTrue(Zoo.addAnimal(animal5));
+			
+			Animal animal6 =new Crocodile("AnimalCrocodile",15, 120);
+			assertTrue(Zoo.addAnimal(animal6));
+			
+			Animal animal7 =new Eagle("AnimalEagle",2,3);
+			assertTrue(Zoo.addAnimal(animal7));
+			
+			Animal animal8 =new AngelFish("AnimalAngelFish",.5,.5);
+			assertTrue(Zoo.addAnimal(animal8));
+			
+			Animal animal9 =new Shark("AnimalShark",5,150);
+			assertTrue(Zoo.addAnimal(animal9));
+			
+			Animal animal10 = new Duck("AnimalDuck",1,1.5);
+			assertTrue(Zoo.addAnimal(animal10));
+			
+			Animal animal11 = new Peacock("AnimalPeacock",2,3);
+			assertTrue(Zoo.addAnimal(animal11));
+			
+			Animal animal12 = new SurgeonFish("AnimalSurgeonFish",1,.5);
+			assertTrue(Zoo.addAnimal(animal12));
+		}catch(Exception e){
+			System.out.println(e);
+		}
+	}
+
+}
