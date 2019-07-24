@@ -11,14 +11,15 @@
  */		
 package Problem1;
 import java.util.ArrayList;
+import java.util.Arrays;
 public class intSet {
-	private final int[] set;
+	private final Integer[] set;
 	
 	/* Parameterised Constructor of class
 	 * @param int array universal Set
 	 * @return null 
 	 */
-	public intSet(int set[]){
+	public intSet(Integer set[]){
 		this.set=set;
 	}
 	
@@ -27,7 +28,7 @@ public class intSet {
 	 * @param Null
 	 * @return int array of universal Set
 	 */
-	public int[] getSet() {
+	public Integer[] getSet() {
 		return set;
 	}
 	
@@ -38,10 +39,8 @@ public class intSet {
 	 */
 	public boolean isMember(int x) {
 		//linear Search occurring
-		for(int indexValue=0;indexValue<set.length;indexValue++) {
-			if(set[indexValue]==x) {
-				return true;
-			}
+		if(Arrays.asList(set).contains(x)){
+			return true;
 		}
 		return false;
 	}		
@@ -60,17 +59,12 @@ public class intSet {
 	 * @return false if not a proper subset
 	 */
 	public boolean isSubSet(intSet s) {
-		boolean flag=false;
-		for(int indexValue=0;indexValue<s.set.length;indexValue++) {
-			for(int indexValueSecond=0;indexValueSecond<set.length;indexValueSecond++) {
-				if(set[indexValueSecond]==s.set[indexValue]) {
-					//if true for any value raise the flag and break out of loop
-					flag=true;
-					break;
-				}
+		for(int indexFirst=0;indexFirst<s.set.length;indexFirst++){
+			if(!Arrays.asList(set).contains(s.set[indexFirst])){
+				return false;
 			}
 		}
-		return flag;
+		return true;
 	}
 	
 	/*
@@ -80,19 +74,12 @@ public class intSet {
 	public intSet getCompliment() {
 		//List for adding up compliments directly
 		ArrayList<Integer> list=new ArrayList<Integer>();
-		int flag=0;
 		for(int indexFirst=1;indexFirst<=1000;indexFirst++){
-			for(int indexSecond=0;indexSecond<this.set.length;indexSecond++){
-				if(this.set[indexSecond]==indexFirst){
-					flag=1;
-				}
+			if(!Arrays.asList(set).contains(indexFirst)){
+					list.add(indexFirst);
 			}
-			if(flag==0){
-				list.add(indexFirst);
-			}
-			flag=0;
 		}
-		int complimentArray[]=new int[list.size()];
+		Integer complimentArray[]=new Integer[list.size()];
 		for(int indexFirst=0;indexFirst<complimentArray.length;indexFirst++){
 			complimentArray[indexFirst]=list.get(indexFirst);
 		}
@@ -106,22 +93,15 @@ public class intSet {
 	 */
 	public intSet union(intSet s1, intSet s2) {
 		ArrayList<Integer> list=new ArrayList<Integer>();
-		int flag=0;
 		for(int indexFirst=0;indexFirst<s1.set.length;indexFirst++) {
 			list.add(s1.set[indexFirst]);
 		}
 		for(int indexFirst=0;indexFirst<s2.set.length;indexFirst++) {
-			for(int indexSecond=0;indexSecond<list.size();indexSecond++) {
-				if(s2.set[indexFirst]==list.get(indexSecond)) {
-					flag=1;
-				}
-			}
-			if(flag==0) {
+			if(!list.contains(s2.set[indexFirst])){
 				list.add(s2.set[indexFirst]);
 			}
-			flag=0;
 		}
-		int array[]=new int[list.size()];
+		Integer array[]=new Integer[list.size()];
 		for(int indexFirst=0;indexFirst<list.size();indexFirst++) {
 			array[indexFirst]=list.get(indexFirst);
 		}
