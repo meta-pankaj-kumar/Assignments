@@ -205,7 +205,7 @@ public class mainRunner {
 						break;
 					default:
 						System.out.println("Your Input was "+userInput);
-						System.out.println("SET OPERATIONS ABORTED!!!");
+						System.out.println("SCREEN OPERATIONS ABORTED!!!");
 						System.exit(0);
 				}
 			}
