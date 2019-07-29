@@ -1,9 +1,6 @@
 package GraphicsLibrary;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
