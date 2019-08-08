@@ -19,7 +19,7 @@ public class Node {
 	 * @return the leftChildNode
 	 */
 	public Node getLeftChildNode() {
-		return leftChildNode;
+		return this.leftChildNode;
 	}
 	/**
 	 * This method set the right child node
@@ -33,7 +33,7 @@ public class Node {
 	 * @return the rightChildNode
 	 */
 	public Node getRightChildNode() {
-		return rightChildNode;
+		return this.rightChildNode;
 	}
 	/**
 	 * This method set the right child node
@@ -47,13 +47,13 @@ public class Node {
 	 * @return the key
 	 */
 	public String getKey() {
-		return key;
+		return this.key;
 	}
 	/**
 	 * This method return the value
 	 * @return the value
 	 */
 	public String getValue() {
-		return value;
+		return this.value;
 	}
 }

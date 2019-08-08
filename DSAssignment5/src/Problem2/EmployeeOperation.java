@@ -47,7 +47,6 @@ public class EmployeeOperation {
 			return this.employeeList;
 		} 
 		catch (Exception e) {
-			System.out.println(e);
 			throw e;
 		}
 	}

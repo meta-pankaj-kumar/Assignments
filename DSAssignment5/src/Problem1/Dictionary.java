@@ -20,6 +20,12 @@ public class Dictionary implements IDictionary {
 		fillDictionary(data);
 	}
 	/**
+	 * 
+	 */
+	public Dictionary(){
+		this.bst= new BST();
+	}
+	/**
 	 * This method fill initial key value pairs in dictionary
 	 * @param data object of Data class containing the key value String arrays
 	 * @throws Exception if number of keys and values is not equal
@@ -49,7 +55,6 @@ public class Dictionary implements IDictionary {
 			Node node = new Node(key,value);
 			return this.bst.add(node);
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Key already present");
 		}
 	}
@@ -65,7 +70,6 @@ public class Dictionary implements IDictionary {
 			return this.bst.delete(key);
 		} 
 		catch (Exception e) {
-			e.printStackTrace();
 			if(e.getMessage().equalsIgnoreCase("BST is empty")){
 				throw new Exception("Dictionary is empty");
 			}
@@ -86,7 +90,6 @@ public class Dictionary implements IDictionary {
 			return this.bst.get(key).getValue();
 		}
 		catch(Exception e){
-			e.printStackTrace();
 			throw new Exception("Key not found");
 		}
 	}
@@ -98,7 +101,7 @@ public class Dictionary implements IDictionary {
 	@Override
 	public String[][] getSortedKeyValuePairs() throws Exception{
 		try{
-			Node[]  sortedNodes = this.bst.getSortedNode();
+			Node[]  sortedNodes = this.bst.getSortedNode(); 
 			String[][] sortedKeyValuePairs = new String[sortedNodes.length][2];
 			int keyIndex =0;
 			for(Node node : sortedNodes){
@@ -109,7 +112,6 @@ public class Dictionary implements IDictionary {
 			return sortedKeyValuePairs;
 		}
 		catch(Exception e){
-			e.printStackTrace();
 			throw new Exception("Dictionary is empty");
 		}
 	}
@@ -134,7 +136,6 @@ public class Dictionary implements IDictionary {
 			return sortedKeyValuePairs;
 		}
 		catch(Exception e){
-			e.printStackTrace();
 			throw new Exception("Dictionary is empty");
 		}
 	}

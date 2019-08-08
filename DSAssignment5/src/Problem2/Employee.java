@@ -15,20 +15,26 @@ public class Employee {
 	 * @param empAdress String value represent employee address
 	 * @param empSalary double value represent employee salary
 	 * @param empAge double value represent employee age
+	 * @throws Exception 
 	 */
-	public Employee(int empId, String empName, String empAdress, double empSalary, double empAge) {
+	public Employee(int empId, String empName, String empAdress, double empSalary, double empAge) throws Exception {
+		try{
 		this.empId = empId;
 		this.empName = empName;
 		this.empAdress = empAdress;
 		this.empSalary = empSalary;
 		this.empAge = empAge;
+		}
+		catch(Exception e){
+			throw new Exception("Invalid Input");
+		}
 	}
 	/**
 	 * This method return employee id
 	 * @return the empId
 	 */
 	public int getEmpId() {
-		return empId;
+		return this.empId;
 	}
 	/**
 	 * This method set the employee id
@@ -42,7 +48,7 @@ public class Employee {
 	 * @return the empName
 	 */
 	public String getEmpName() {
-		return empName;
+		return this.empName;
 	}
 	/**
 	 * This method set the employee name
@@ -56,7 +62,7 @@ public class Employee {
 	 * @return the empAdress
 	 */
 	public String getEmpAdress() {
-		return empAdress;
+		return this.empAdress;
 	}
 	/**
 	 * This method set the employee address
@@ -70,7 +76,7 @@ public class Employee {
 	 * @return the empSalary
 	 */
 	public double getEmpSalary() {
-		return empSalary;
+		return this.empSalary;
 	}
 	/**
 	 * This method set the employee salary
@@ -84,7 +90,7 @@ public class Employee {
 	 * @return the empAge
 	 */
 	public double getEmpAge() {
-		return empAge;
+		return this.empAge;
 	}
 	/**
 	 * This method set the employee age

@@ -8,7 +8,7 @@ public class EmployeeOperationTest {
 	 * EmployeeOperation class
 	 */
 	@Test
-	void testGetSortEmployeeList() {
+	public void testGetSortEmployeeList() {
 		try {
 			Employee emp1 = new Employee(1, "sabir", "chittorgarh", 20000, 21);
 			Employee emp2 = new Employee(2, "pankaj", "UP", 20000, 22);

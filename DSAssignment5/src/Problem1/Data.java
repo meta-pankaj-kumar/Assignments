@@ -19,13 +19,13 @@ public class Data {
 	 * @return the keys
 	 */
 	public String[] getKeys() {
-		return keys;
+		return this.keys;
 	}
 	/**
 	 * This method return the array of values
 	 * @return the values
 	 */
 	public String[] getValues() {
-		return values;
+		return this.values;
 	}
 }
