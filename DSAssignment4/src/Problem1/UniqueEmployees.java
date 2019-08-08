@@ -22,4 +22,10 @@ public class UniqueEmployees {
 		}
 		return flag;
 	}
+	/**
+	 * @return ArrayList of employees
+	 */
+	public HashMap<String,Employee> display(){
+		return this.employeeMap;
+	}
 }

@@ -22,6 +22,12 @@ public class EmployeeOperations {
 		return true;
 	}
 	/**
+	 * @return ArrayList of employees
+	 */
+	public ArrayList<Employee> display(){
+		return this.employeeList;
+	}
+	/**
 	 * @param null
 	 * @return ArrayList of Employees
 	 */
