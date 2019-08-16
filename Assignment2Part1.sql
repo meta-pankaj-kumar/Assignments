@@ -164,36 +164,36 @@ VALUES('Laptops',1);
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('i5 Processor',15);
+VALUES('i5 Processor',8);
 
 
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('i7 Processor',15);
+VALUES('i7 Processor',8);
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Acer',16);
+VALUES('Acer',9);
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Acer',17);
+VALUES('Acer',10);
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Dell',16);
+VALUES('Dell',9);
 
 
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Dell',17);
+VALUES('Dell',10);
 
 
 INSERT INTO category (categoryName)
@@ -204,19 +204,19 @@ VALUES('Shoes');
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Puma',22);
+VALUES('Puma',15);
 
 
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Reebok',22);
+VALUES('Reebok',15);
 
 INSERT INTO category (categoryName,parentcategoryId)
 
 
-VALUES('Adidas',22);
+VALUES('Adidas',15);
 
 
 /**
