@@ -15,7 +15,7 @@ SELECT orders.OrderId AS "Order Id",orders.ShopperId As "Shopper Id", orders.Ord
 /*
 Display list of shoppers which haven't ordered anything since last month
 */
-SELECT shopper.ShopperId AS "User Id", user.Name AS "Shopper Name", user.Email AS "Shopper Email",user.Phone AS "Shopper Phone" from shopper,user where shopper.ShopperId = user.UserId AND shopper.ShopperId NOT IN(SELECT DISTINCT orders.ShopperId from orders where MONTH(orders.OrderDate) >= (MONTH(NOW())-1) AND YEAR(orders.OrderDate) = YEAR(NOW()));
+SELECT shopper.ShopperId AS "User Id", user.Name AS "Shopper Name", user.Email AS "Shopper Email",user.Phone AS "Shopper Phone" from shopper,user where shopper.ShopperId = user.UserId AND shopper.ShopperId NOT IN(SELECT DISTINCT orders.ShopperId from orders where MONTH(orders.OrderDate) >= (MONTH(NOW())-1) AND YEAR(orders.OrderDate) = YEAR(NOW())-1);
 
 /*
 Display list of shopper along with orders placed by them in last 15 days
