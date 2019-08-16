@@ -10,7 +10,7 @@ SELECT product.ProductId AS "Id",product.ProductName AS "Title" FROM product WHE
 /*
 Display all Id, Title and Parent Category Title for all the Categories listed, sorted by Parent Category Title and then Category Title. (If Category is top category then Parent Category Title column should display “Top Category” as value.)
 */
-SELECT category.CategoryId AS "Id",category.CategoryName AS "Category Title",IF(category.ParentCategoryId > 0,category.CategoryName,"Top Category") AS "Parent Category Title" FROM category ORDER BY "Parent Category Title",category.CategoryName;
+SELECT child.CategoryId AS "Id",child.CategoryName AS "Category Title",IF(child.ParentCategoryId > 0,parent.CategoryName,"Top Category") AS "Parent Category Title" FROM category child,category parent where child.ParentCategoryId = parent.CategoryId ORDER BY "Parent Category Title",child.CategoryName;
 /*
 Display Id, Title, Parent Category Title of all the leaf Categories (categories which are not parent of any other category)
 */
