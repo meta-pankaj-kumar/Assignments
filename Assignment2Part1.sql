@@ -1421,7 +1421,7 @@ VALUES(1,3,'Not Shipped','2019-08-24');
 INSERT INTO orderStatus (orderId,productId,status,shippingDate)
 
 
-VALUES(2,11,'Shipped','2019-07-24');
+VALUES(2,11,'Not Shipped','2019-07-24');
 
 
 
