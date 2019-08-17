@@ -193,6 +193,7 @@ final class sparse {
 	 * @return sparse type multiplication of both matrix 
 	 * @exception throws Arithmetic Exception
 	 */
+	/*
 	public sparse multiplyMatric(sparse secondMatrix)throws ArithmeticException {
 		//input validation
 		if(this.matrixColumn != secondMatrix.matrixRow){
@@ -238,6 +239,7 @@ final class sparse {
 		}
 	return new sparse(multiplyMatrix);
 	}
+	*/
 	public sparse multiplyMatrix(sparse secondMatrix) throws Exception { 
 		int row1=this.matrixRow;
 		int col1=this.matrixColumn;
