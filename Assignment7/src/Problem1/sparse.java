@@ -16,6 +16,8 @@ final class sparse {
 	private final int[][] matrix;
 	private final int matrixRow;
 	private final int matrixColumn;
+	private int[][] multiplicationProduct;
+	private int indexFirst=0 , indexSecond=0 , indexThird=0;
 	/*
 	 * @param null
 	 * @return null
@@ -191,7 +193,7 @@ final class sparse {
 	 * @return sparse type multiplication of both matrix 
 	 * @exception throws Arithmetic Exception
 	 */
-	public sparse multiplyMatrix(sparse secondMatrix)throws ArithmeticException {
+	public sparse multiplyMatric(sparse secondMatrix)throws ArithmeticException {
 		//input validation
 		if(this.matrixColumn != secondMatrix.matrixRow){
 			throw new ArithmeticException("Can't perform multiplication");
@@ -236,4 +238,34 @@ final class sparse {
 		}
 	return new sparse(multiplyMatrix);
 	}
+	public sparse multiplyMatrix(sparse secondMatrix) throws Exception { 
+		int row1=this.matrixRow;
+		int col1=this.matrixColumn;
+		int row2=secondMatrix.matrixRow;
+		int col2=secondMatrix.matrixColumn;
+		if (row2 != col1) { 
+		 throw new Exception ("Multiplication not possible because of Size "); 
+		} 
+		multiplicationProduct = new int[row1][col2]; 
+		multiplyMatrixRecursively(row1, col1, this.getMatrix() , row2, col2, secondMatrix.getMatrix());
+		return new sparse(this.multiplicationProduct);
+	} 
+	public void multiplyMatrixRecursively(int row1, int col1, int firstMatrix[][],int row2, int col2, int secondMatrix[][]) { 
+		if (indexFirst >= row1) {
+			return;
+		} 
+		if (indexSecond < col2) { 
+			if (indexThird < col1) { 
+				multiplicationProduct[indexFirst][indexSecond] += firstMatrix[indexFirst][indexThird] * secondMatrix[indexThird][indexSecond]; 
+				indexThird++; 
+				multiplyMatrixRecursively(row1, col1, firstMatrix, row2, col2, secondMatrix); 
+			} 	
+			indexThird = 0; 
+			indexSecond++; 
+			multiplyMatrixRecursively(row1, col1, firstMatrix, row2, col2, secondMatrix); 
+		} 	
+		indexSecond = 0; 
+		indexFirst++; 
+		multiplyMatrixRecursively(row1, col1, firstMatrix, row2, col2, secondMatrix); 
+	} 
 }

@@ -24,7 +24,7 @@ public class sparseTest {
 	 * Testing for positive test cases
 	 */
 	@Test
-	public void testMultiplyMatrix() {
+	public void testMultiplyMatrix() throws Exception {
 		int[][] array1 = new int[][] {{0,0,1},{0,2,0},{1,0,3}};
 		sparse matrix1 = new sparse(array1);		
 		int[][] array2 = new int[][] {{1,0,0},{2,0,0},{3,0,0}};
