@@ -22,6 +22,7 @@ public class MainRunner {
 				System.out.println("Enter 2  to Insert five or more images of a product using batch insert technique");
 				System.out.println("Enter 3  to Delete all those products which were not ordered by any Shopper in last 1 year and get number of products deleted");
 				System.out.println("Enter 4  to display the category title of all top parent categories sorted alphabetically and the count of their child categories");
+				System.out.println("Enter 5 for closing the connection and Exitting main Runner");
 				int input=Integer.parseInt(in.readLine());
 				switch(input){
 					case 1: 
@@ -82,6 +83,13 @@ public class MainRunner {
 					case 4:
 						result = driver.executeFourthQuerry();
 						printResult(result);
+						break;
+						
+					case 5:
+						driver.connect.close();
+						System.out.println("Connection Closed");
+						System.out.println("Exitiing Main Runner");
+						System.exit(0);
 						break;
 					default:
 						System.out.println("Wrong Choice");
