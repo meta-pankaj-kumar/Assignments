@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class AssignmentOfSession5 {
 	private PreparedStatement statement;
 	private ConnectToMySQL connector;
-	private Connection connect;
+	public Connection connect;
 	private SQLQuerries querry;
 	private ResultSet result;
 	/**
