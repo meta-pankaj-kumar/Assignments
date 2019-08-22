@@ -78,7 +78,7 @@ public class MainRunner {
 						System.out.println("Images Inserted");
 						break;
 					case 3:
-						System.out.println(driver.executeThirdQuerry()-2+" Rows Affected");
+						System.out.println(driver.executeThirdQuerry()+" Rows Affected");
 						break;
 					case 4:
 						result = driver.executeFourthQuerry();
