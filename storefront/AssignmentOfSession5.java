@@ -6,7 +6,7 @@ import java.sql.SQLException;
 /**
  * @author Pankaj
  */
-public class AssignmentOfSession5 {
+public class queryDriver {
 	private PreparedStatement statement;
 	private ConnectToMySQL connector;
 	public Connection connect;
@@ -79,6 +79,7 @@ public class AssignmentOfSession5 {
 	 */
 	public int executeThirdQuerry() throws SQLException , Exception{
 		try {
+		this.statement = this.connect.prepareStatement("SET SQL_SAFE_UPDATES = 0;");
 	        return this.statement.executeUpdate(this.querry.getThirdQuerry())-2;
 		} 
 		catch (SQLException e) {
