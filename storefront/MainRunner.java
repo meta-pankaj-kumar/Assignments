@@ -14,7 +14,7 @@ public class MainRunner {
 	 */
 	public static void main(String[] args) {
 		BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-		AssignmentOfSession5 driver = new AssignmentOfSession5();
+		queryDriver driver = new queryDriver();
 		ResultSet result;
 		while(true){
 			try{
