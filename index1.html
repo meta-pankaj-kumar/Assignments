@@ -9,7 +9,7 @@
 				    document.getElementById('RegistrationForm').style.display='block';
 				}
 				function submitRegForm(){
-				   if(!validateRegistrationForm()){
+				   if(validateRegistrationForm()){
 					   regForm = document.getElementById('RegistrationForm');
 					   document.getElementById('RegNo').innerHTML = document.getElementById('EmployeeId').value;
 					   document.getElementById('RegistrationForm').style.display = 'none';
@@ -17,7 +17,7 @@
 				   }
 				}
 				function submitVehicleForm(){
-					if(!validateVehicleForm()){
+					if(validateVehicleForm()){
 						document.getElementById('VechicleId').innerHTML = document.getElementById('VehicleType').value;
 						document.getElementById('RegistrationNumber').innerHTML = document.getElementById('EmployeeId').value;
 						document.getElementById('VehicleForm').style.display = 'none';
