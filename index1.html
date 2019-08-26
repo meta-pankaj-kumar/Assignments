@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script>
+				function goToRegForm(){
+					document.body.style.background = "url('Photo2.jpg')";
+					document.getElementById('index').style.display = 'none';
+					document.getElementById('top').style.display = 'block';
+				    document.getElementById('RegistrationForm').style.display='block';
+				}
+				function submitRegForm(){
+				   if(!validateRegistrationForm()){
+					   regForm = document.getElementById('RegistrationForm');
+					   document.getElementById('RegNo').innerHTML = document.getElementById('EmployeeId').value;
+					   document.getElementById('RegistrationForm').style.display = 'none';
+					   document.getElementById('VehicleForm').style.display='block';
+				   }
+				}
+				function submitVehicleForm(){
+					if(validateVehicleForm()){
+						document.getElementById('VechicleId').innerHTML = document.getElementById('VehicleType').value;
+						document.getElementById('RegistrationNumber').innerHTML = document.getElementById('EmployeeId').value;
+						document.getElementById('VehicleForm').style.display = 'none';
+						document.getElementById('PlanForm').style.display = 'block';
+					}
+				}
+				function priceCalculator(){
+					var category = document.getElementById('VehicleType').value;
+					var currency = document.getElementById('Currency').value;
+					var parkingRate = [
+										[convertToUSD(5) , convertToUSD(100) , convertToUSD(500)],
+										[convertToUSD(10) , convertToUSD(200) , convertToUSD(1000)],
+										[convertToUSD(20) , convertToUSD(500) , convertToUSD(3500)]
+									  ];
+					var row;
+					if(category === "Bicycle"){
+						row = 0;
+					}
+					else if(category === "Two Wheeler"){
+						row = 1;
+					}
+					else if(category === "Four Wheeler"){						
+						row = 2;
+					}
+					
+					if(currency === "YEN"){
+						document.getElementById('WeeklyPrice').innerHTML = convertToYEN(parkingRate[row][0]);
+						document.getElementById('MonthlyPrice').innerHTML = convertToYEN(parkingRate[row][1]);
+						document.getElementById('YearlyPrice').innerHTML = convertToYEN(parkingRate[row][2]);
+					}
+					else if(currency === "INR"){
+						document.getElementById('WeeklyPrice').innerHTML = convertToINR(parkingRate[row][0]);
+						document.getElementById('MonthlyPrice').innerHTML = convertToINR(parkingRate[row][1]);
+						document.getElementById('YearlyPrice').innerHTML = convertToINR(parkingRate[row][2]);
+					}
+					else if(currency === "USD"){
+						document.getElementById('WeeklyPrice').innerHTML = parkingRate[row][0];
+						document.getElementById('MonthlyPrice').innerHTML = parkingRate[row][1];
+						document.getElementById('YearlyPrice').innerHTML = parkingRate[row][2];
+					}					
+				}
+				function convertToUSD(value){
+					return (value/70);
+				}
+				function convertToINR(value){
+					return (value*70);
+				}
+				function convertToYEN(value){
+					return (value*105);
+				}
+				function submitPlanForm(){
+					if(validatePlanForm()){
+						document.getElementById('RegistrationNumberPreFinalForm').innerHTML = document.getElementById('EmployeeId').value;
+						document.getElementById('FirstNameDisplay').innerHTML = document.getElementById('FirstName').value;
+						document.getElementById('LastNameDisplay').innerHTML = document.getElementById('LastName').value;
+						document.getElementById('GenderDisplay').innerHTML = getRadioButtonValue('Gender');
+						document.getElementById('EmailDisplay').innerHTML = document.getElementById('EmailId').value;
+						document.getElementById('ContactNumberDisplay').innerHTML = document.getElementById('ContactNumber').value;
+						document.getElementById('VehicleTypeDisplay').innerHTML = document.getElementById('VehicleType').value;
+						document.getElementById('VehicleNameDisplay').innerHTML = document.getElementById('VehicleName').value;
+						document.getElementById('VehicleNumberDisplay').innerHTML = document.getElementById('VehicleNumber').value;
+						document.getElementById('PlanDisplay').innerHTML = getRadioButtonValue('Plan');
+						document.getElementById('CurrencyDisplay').innerHTML = document.getElementById('Currency').value;
+						document.getElementById('RegistrationNumber').innerHTML = document.getElementById('EmployeeId').value;
+						document.getElementById('VechicleId').innerHTML = document.getElementById('VehicleType').value;
+						document.getElementById('PlanForm').style.display = 'none';
+						document.getElementById('PreConfirmForm').style.display = 'block';
+					}
+				}
+				function getRadioButtonValue(divId){
+					var div = document.getElementsByName(divId);
+					var divValue = "";
+					for(var index = 0; index < div.length; index++){
+						if(div[index].checked){
+							divValue = div[index].value;
+						}
+					}
+					return divValue;
+				}
+			    function submitPreConfirmForm(){
+					document.body.style.background = "url('OccasionalParking_News.jpg')";
+					document.getElementById('RegistrationNumberFinalForm').innerHTML = document.getElementById('EmployeeId').value;
+					document.getElementById('VehicleNumberFinalForm').innerHTML = document.getElementById('VehicleNumber').value;
+					document.getElementById('PreConfirmForm').style.display = 'none';
+					document.getElementById('ConfirmForm').style.display = 'block';
+				}
+				function cancelForm(){
+					document.location.reload(true);
+				}
+				function validateRegistrationForm(){
+					if( document.getElementById('FirstName').value == ""  || 
+						document.getElementById('LastName').value == ""   ||
+						getRadioButtonValue('Gender') == ""				  ||
+						document.getElementById('EmployeeId').value == "" ||
+						document.getElementById('EmailId').value == ""    ||
+						document.getElementById('Password').value == ""   ||
+						document.getElementById('ConfirmPassword').value == "" ||   
+						document.getElementById('ContactNumber').value == "" ){
+							alert("Mandatory Fields Cannot Be Empty");
+							return false;
+					}
+					if(document.getElementById('FirstName').value.length <2){
+						alert("First Name should contain Atleast Two Characters");
+						return (false);
+					}
+					if(document.getElementById('LastName').value.length <2){
+						alert("Last Name should contain Atleast Two Characters");
+						return (false);
+					}
+					if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('EmailId').value)))	  {
+						alert("You have entered an invalid email address!");
+						return (false);
+					}
+					if (!document.getElementById('Password').value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)) {
+						alert("Invalid Password !!! Password should contain 8 - 15 characters having one Capital letter , one Small letter , one numeric digit and one Special Character");
+						return (false);
+					}
+					if(document.getElementById('Password').value != document.getElementById('ConfirmPassword').value) {
+						alert("Password Mismatch Try Again!!!!");
+						return (false);
+					}
+					if(!(/^\d{10}$/.test(document.getElementById('ContactNumber').value))){
+						alert("Contact Number Should Contain 10 digits");
+						return (false);
+					}
+					return true;
+				}
+				function validateVehicleForm(){
+					if( document.getElementById('VehicleName').value == ""|| 
+						document.getElementById('VehicleType').value == ""||
+						document.getElementById('VehicleNumber').value == "" ){
+							alert("Mandatory Fields Cannot Be Empty");
+							return false;
+					}
+					return true;
+				}
+				function validatePlanForm(){
+					if( document.getElementById('Currency').value == "" || 
+						getRadioButtonValue('Plan') == "" ){
+							alert("Mandatory Fields Cannot Be Empty");
+							return false;
+					}
+					return true;
+				}
+				
+        </script>
+
+
+
+    <title>Metacube Parking Portal</title>
+</head>
+<body background = "OccasionalParking_News.jpg">
+	
+	<div id = "index" align = "center" background = "Photo.jpg">
+		<h1><font size = "10">Welcome to Metacube Parking Portal</font></h1>
+		</br>
+		<h1>"The Road to Success Is Dotted With </br>Many Tempting Parking Places"</h1>
+		
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- Will Rogers</br>
+		</br><img src = "Parking.jpg" width = "30%"></br></br></br>
+		<input type = "button" id = "indexButton" value = "Register New Vehicle" onclick = "goToRegForm()">
+	
+	</div>
+	<div id = "top" align = "center" style="display:none">
+		<h1>Metacube Parking Portal</h1>
+	</div>
+    <div id = "RegistrationForm" align = "center" style="display:none">
+        <h1>Employee Registration Form</h1>
+		<form  method = "get" >
+            <table>
+                <tr>
+                    <th>
+                            Input Name :
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                            <label for = "FirstName">First Name : *</label>
+                    </td>
+                    <td>
+                            <input type = "text" placeholder = "First Name" id = "FirstName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <label for = "LastName">Last Name : *</label>
+                    </td>
+                    <td>
+                            <input type = "text" placeholder = "Last Name" id = "LastName"></br>
+                    </td>
+                </tr>
+				<tr>
+					<td>
+					</br>
+					</td>
+				</tr>
+                <tr>
+                        <th>
+                                Select Gender *
+                        </th>
+                </tr>
+                <tr>
+					<div id = "Gender">
+                        <td>
+                                <input type = "radio" name = "Gender" id = "Male" value = "Male"> <label for = "Male">Male</label></br>
+                        </td>
+                        <td>
+                                <input type = "radio" name = "Gender" id = "Female" value = "Female"><label for = "Female">Female</label></br>
+                        </td>
+					</div>
+                </tr>
+				<tr>
+					<td>
+					</br>
+					</td>
+				</tr>
+                <tr>
+                        <td>
+                                <label for = "EmployeeId">Employee Id : *</label>
+                        </td>
+                        <td>
+                                <input type = "text" placeholder = "Employee Id" id = "EmployeeId"></br>
+                        </td>
+                </tr>
+				<tr>
+					<td>
+					</br>
+					</td>
+				</tr>
+                <tr>
+                        <td>
+                                <label for = "EmailId">Email id : *</label>
+                        </td>
+                        <td>
+                                <input type = "email" name = "email" id = "EmailId" placeholder = "Email Id"></br>
+                        </td>
+                </tr>
+				<tr>
+					<td>
+					</br>
+					</td>
+				</tr>
+				<tr>
+                        <th>
+                                Password 
+                        </th>
+                </tr>
+                <tr>
+                        <td>
+                                <label for = "Password">Password : *</label>
+                        </td>
+                        <td>
+                                <input type = "password" name = "password" id = "Password" placeholder = "Password"></br>
+                        </td>
+                </tr>
+                <tr>
+                        <td>
+                                <label for = "ConfirmPassword">Confirm Password : *</label>
+                        </td>
+                        <td>
+                                <input type = "password" name = "password" id = "ConfirmPassword" placeholder = "Confirm Password"></br>
+                        </td>
+                </tr>
+				<tr>
+					<td>
+					</br>
+					</td>
+				</tr>
+                <tr>
+                        <td>
+                                <label for = "ContactNumber">Contact Number : *</label>
+                        </td>
+                        <td>
+                                <input type = "number" name = "number" id = "ContactNumber" placeholder = "Contact Number"></br>
+                        </td>
+                </tr>
+				<tr>
+					<td>
+					</br>
+					</td>
+				</tr>
+            </table>
+			<input type = "button" value = "Register" onclick="submitRegForm()"></br>
+		</form>
+    </div>
+   
+		<div id = "VehicleForm" align = "center" style="display:none">
+        <h1>Vehicle Details Form</h1>
+		<form method = "get" >
+            <table>
+                    <tr>
+                            <th>
+                                    Registration Number : 
+                            </th>
+                            <th>
+                                    <p id="RegNo"></p>
+                            </th>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <label for = "VehicleName">Vehicle Name : *</label>
+                            </td>
+                            <td>
+                                    <input type = "text" placeholder = "Vehicle Name" id = "VehicleName"></br>
+                            </td>
+                    </tr>
+					<tr>
+					<td>
+					</br>
+					</td>
+					</tr>
+                    <tr>
+                            <td>
+                                    Vehicle Type *
+                            </td>
+                            <td>
+                                    <select id = "VehicleType">
+											<option value="">Select</option>
+                                            <option value="Bicycle">Bicycle</option>
+                                            <option value="Two Wheeler">Two Wheeler</option>
+                                            <option value="Four Wheeler">Four Wheeler</option>
+                                    </select>
+                            </td>
+                    </tr>
+					<tr>
+					<td>
+					</br>
+					</td>
+					</tr>
+                    <tr>
+                            <td>
+                                    <label for = "VehicleNumber">Vehicle Number : *</label>
+                            </td>
+                            <td>
+                                    <input type = "text" placeholder = "Vehicle Number" id = "VehicleNumber"></br>
+                            </td>
+                    </tr>
+					<tr>
+					<td>
+					</br>
+					</td>
+					</tr>
+					<tr>
+							<td>
+									<label for = "VehicleDetails">Vehicle Details : </label>
+							</td>
+					</tr>
+					
+            </table>
+            <textarea rows="10" cols="50" id = "VehicleDetails" placeholder = "Input Vehicle Details Here"></textarea></br></br>
+            <input type = "button" value = "Submit Details" onclick="submitVehicleForm()"></br>
+        </form>
+    </div>
+		<div id = "PlanForm" align = "center" style="display:none">
+			<h1>Vehicle Plan Form</h1>
+			<form method = "get" >
+				<table>
+					<tr>
+						<th>
+							Registration Number : 
+						</th>
+						<th>
+							<p id="RegistrationNumber"></p>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							Vehicle Selected : 
+						</th>
+						<th>
+							<p id="VechicleId"></p>
+						</th>
+					</tr>
+					
+					<tr>
+                                    <td>
+                                            Currency : *
+                                    </td>
+                                    <td>
+                                            <select id = "Currency" onchange = "priceCalculator()">
+													<option value="" >SELECT</option>
+                                                    <option value="INR">INR</option>
+                                                    <option value="USD">USD</option>
+                                                    <option value="YEN">YEN</option>
+                                            </select>
+                                    </td>
+					</tr>
+					<tr>
+					<td>
+					</br>
+					</td>
+					</tr>
+					<tr>
+                                    <td>
+                                            Select Plan : *
+                                    </td>
+					</tr>  
+					<tr>
+								<div id = "Plan">
+									<td>
+                                            <input type = "radio" name = "Plan" id ="WeeklyPlan" value = "Weekly Plan">
+											<label for = "WeeklyPlan" >Weekly Pass</label></br>
+                                    </td>
+									<td>
+                                            <input type = "radio" name = "Plan" id ="MonthlyPlan" value = "Monthly Plan">
+											<label for = "MonthlyPlan" >Monthly Pass</label></br>
+                                    </td>
+									<td>
+                                            <input type = "radio" name = "Plan" id ="YearlyPlan" value = "Yearly Plan">
+											<label for = "YearlyPlan" >Yearly Pass</label></br>
+                                    </td>
+								</div>
+					</tr>
+					<tr>
+									<td>
+											<p id = "WeeklyPrice"></p>
+                                    </td>
+									<td>
+                                            <p id = "MonthlyPrice"></p>
+                                    </td>
+									<td>
+                                            <p id = "YearlyPrice"></p>
+                                    </td>
+					</tr>
+					<tr>
+					<td>
+					</br>
+					</td>
+					</tr>
+				</table>
+			<input type = "button" value = "Get Pass" onclick = "submitPlanForm()"></br>
+			</form>
+		</div>	
+		<div id = "PreConfirmForm" align = "center" style="display:none">
+                <h1>Confirmation Form</h1>
+                <form method = "get" >
+                    <table>
+                            <tr>
+                                    <th>
+                                            Registration Number : 
+                                    </th>
+                                    <th>
+                                            <p id="RegistrationNumberPreFinalForm"></p>
+                                    </th>
+                            </tr>
+                            <tr>
+								<td>
+										First Name :
+								</td>
+								<td>
+										<p id="FirstNameDisplay"></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Last Name :
+								</td>
+								<td>
+										<p id="LastNameDisplay"></p>	
+								</td>
+							</tr>
+							<tr>
+									<td>
+											Gender :
+									</td>
+									<td>
+											<p id="GenderDisplay"></p>
+									</td>
+							</tr>
+							<tr>
+									<td>
+											Email id :
+									</td>
+									<td>
+											<p id="EmailDisplay"></p>
+									</td>
+							</tr>
+							<tr>
+									<td>
+											Contact Number :
+									</td>
+									<td>
+											<p id="ContactNumberDisplay"></p>
+									</td>
+							</tr>
+							<tr>
+                                    <td>
+                                            Vehicle Type : 
+                                    </td>
+                                    <td>
+                                            <p id="VehicleTypeDisplay"></p>
+                                    </td>
+                            </tr>
+							<tr>
+                                    <td>
+                                            Vehicle Name : 
+                                    </td>
+                                    <td>
+                                            <p id="VehicleNameDisplay"></p>
+                                    </td>
+                            </tr>
+							<tr>
+                                    <td>
+                                            Vehicle Number : 
+                                    </td>
+                                    <td>
+                                            <p id="VehicleNumberDisplay"></p>
+                                    </td>
+                            </tr>
+                            <tr>
+                                    <td>
+                                            Plan Selected :
+                                    </td>
+									<td>
+                                            <p id="PlanDisplay"></p>
+                                    </td>
+                            </tr>
+							<tr>
+									<td>
+											Currency Opted :
+                                    </td>
+									<td>
+                                            <p id = "CurrencyDisplay"></p>
+                                    </td>
+                            </tr>
+							<tr>
+									<td>
+											<input type = "button" value = "Confirm Details" onclick = "submitPreConfirmForm()">
+                                    </td>
+									<td>
+                                            <input type = "button" value = "Cancel" onclick = "cancelForm()">
+                                    </td>
+                            </tr>
+					</table>
+				</form>
+		</div>
+		<div id = "ConfirmForm" align = "center" style="display:none">
+                <h1>Congratulations Your Vehicle Has Been Registered with Metacube Parking Services</h1>
+                <form method = "get" >
+                    <table>
+                            <tr>
+                                    <th>
+                                            Registration Number : 
+                                    </th>
+                                    <th>
+                                            <p id="RegistrationNumberFinalForm"></p>
+                                    </th>
+                            </tr>
+							<tr>
+                                    <td>
+                                            Vehicle Number : 
+                                    </td>
+                                    <td>
+                                            <p id="VehicleNumberFinalForm"></p>
+                                    </td>
+                            </tr>
+                    </table>
+					Your Vehicle Has Been Successfully Registered With Us </br></br>
+					Thank You For Using Metacube Parking System</br></br>
+					Have A Nice Day</br>
+				</form>
+		</div>
+    </body>
+</html>
