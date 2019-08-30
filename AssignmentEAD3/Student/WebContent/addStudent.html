@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Student</title>
+</head>
+<body background="pattern.jpg">
+	<div align="center">
+	<form action = "AddStudent" method="post">
+		<table>
+			<h1>Add New Student</h1>
+			<h3>Enter Student Details</h3>
+			<tr>
+				<td>
+					<label for="firstName">First Name</label>
+				</td>
+				<td>
+					<input type ="text" id = "firstName" name = "firstName" placeholder = "First Name" pattern="[a-zA-Z]+" minlength="2" maxlength="45" required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					</br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="lastName">Last Name</label>
+				</td>
+				<td>
+					<input type ="text" id = "lastName" name = "lastName" placeholder = "Last Name"  pattern="[a-zA-Z]+" minlength="2" maxlength="45"  required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					</br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="fathersName">Father`s Name&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				</td>
+				<td>
+					<input type ="text" id = "fathersName" name ="fathersName"  placeholder = "Father`s Name"  pattern="[a-z A-Z]+" minlength="2" maxlength="45"  required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					</br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="email">Email Id</label>
+				</td>
+				<td>
+					<input type ="text" id = "email" name ="email"  placeholder = "Email Id" maxlength="45" required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					</br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="class">Class</label>
+				</td>
+				<td>
+					<input type ="Number" id = "class" name ="class"  placeholder = "Class" min = "1" max="400" required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					</br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="age">Age</label>
+				</td>
+				<td>
+					<input type ="number" id = "age" name ="age"  placeholder = "Age" min = "1" max="400" required>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					</br>
+				</td>
+			</tr>
+		</table>
+		<input type ="submit" value="Add New Student">
+	</form>
+	</div>
+</body>
+</html>
