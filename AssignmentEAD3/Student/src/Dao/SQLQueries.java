@@ -41,7 +41,7 @@ public class SQLQueries {
 	public String getClassQuery(){
 		this.query = "SELECT Student.ClassOfStudent "
 				+ "FROM Student "
-				+ "GROUP BY (Student.ClassOfStudent) ASC;";
+				+ "GROUP BY (Student.ClassOfStudent) ORDER by (Student.ClassOfStudent) ASC;";
 		return this.query;
 	}
 	public String getClassStudentsQuery(){
