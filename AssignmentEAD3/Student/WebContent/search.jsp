@@ -73,11 +73,20 @@
 						<option value="">Select Class</option>
 						<%
 						ArrayList<Integer> list = (ArrayList)request.getAttribute("List");
+						int flag=0;
 							for(int index : list){
+							flag=1;
 						%>
                         <option value="<%=index%>"><%=index %></option>
                        <%} %>
                     </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<%if(flag==0) {%>
+					<p>No Classes Found For filtering in Records</p>
+					<%} %>
 				</td>
 			</tr>
 		</table>
