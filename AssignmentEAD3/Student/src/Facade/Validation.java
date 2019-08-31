@@ -23,13 +23,13 @@ public class Validation {
 		return this.error;
 	}
 	public String validateUpdate(Student student){
-		if(student.getFirstName().trim().matches("[a-zA-Z]+")){
+		if(!student.getFirstName().trim().matches("[a-zA-Z]+")){
 			this.error = "First Name Should Contain Only Alphabets";
 		}
-		else if(student.getLastName().trim().matches("[a-zA-Z]+")){
+		else if(!student.getLastName().trim().matches("[a-zA-Z]+")){
 			this.error = "Last Name Should Contain Only Alphabets";
 		}
-		else if(student.getFathersName().trim().matches("[a-z A-Z]+")){
+		else if(!student.getFathersName().trim().matches("[a-z A-Z]+")){
 			this.error = "Fathers Name Should Contain Only Alphabets";
 		}
 		return this.error;
