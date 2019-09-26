@@ -1,369 +1,381 @@
 <html>
 
-    <head>
-        <style>
-		/* styling for collapsible */
-            .collapsible {
-                background-color: darkblue;
-                color: white;
-                cursor: pointer;
-                padding: 18px;
-                width: 100%;
-                border: none;
-                text-align: left;
-                outline: none;
-                font-size: 15px;
-            }
-		
-            .active,
-            .collapsible:hover {
-                background-color: white;
-                color: blue;
-            }
+<head>
+    <style>
+        /* styling for collapsible */
+        .collapsible {
+            background-color: darkblue;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
 
-            .collapsible:after {
-                content: '\02795';
-                /* Unicode character for "plus" sign (+) */
-                font-size: 13px;
-                color: white;
-                float: right;
-                margin-left: 5px;
-            }
+        .active,
+        .collapsible:hover {
+            background-color: white;
+            color: blue;
+        }
 
-            .active:after {
-                content: "\2796";
-                /* Unicode character for "minus" sign (-) */
-                color: darkblue;
-            }
-/*styling for content*/
-            .content {
-                padding: 0 18px;
-                display: none;
-                overflow: hidden;
-                background-color: white;
-            }
-/*styling for blue content*/
-            .blueBox {
-                border: 2px solid darkblue;
-                border-radius: 4px;
-            }
+        .collapsible:after {
+            content: '\02795';
+            /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: white;
+            float: right;
+            margin-left: 5px;
+        }
 
-            .circle {
-                width: 100px;
-                height: 75px;
-                border-radius: 200px;
-                background: white;
-                border: solid black;
-                padding-top: 20px;
+        .active:after {
+            content: "\2796";
+            /* Unicode character for "minus" sign (-) */
+            color: darkblue;
+        }
 
-            }
-/*styling for plans */
-            .Plans {
+        /*styling for content*/
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: white;
+        }
 
-                width: 32%;
-                border: solid darkblue;
-                border-radius: 20px;
-                margin-right: 0.5%;
-            }
+        /*styling for blue content*/
+        .blueBox {
+            border: 2px solid darkblue;
+            border-radius: 4px;
+        }
 
-            .purchaseButton {
-                color: darkblue;
-            }
-/*styling for Nav bar */
-            .navProperty {
-                margin-left: 2%;
-                color: white;
-            }
+        .circle {
+            width: 100px;
+            height: 75px;
+            border-radius: 200px;
+            background: white;
+            border: solid black;
+            padding-top: 20px;
 
-            #Bicycle {
-                float: left;
-            }
+        }
 
-            #TwoWheeler {
-                float: left;
-            }
+        .NavBar {
+            background-color: darkblue;
+            width: 100%;
+            height: 5%;
+            padding-top: 1%;
+        }
 
-            #FourWheeler {
-                float: left;
-            }
-        </style>
-    </head>
+        /*styling for plans */
+        .Plans {
 
-    <body background="pattern.jpg">
-/*Nav Bar */ 
-        <div id="NavBar" class="blueBox" style="background-color: darkblue">
-            <a href="#EmployeeForm" class="navProperty">Add Employee</a>
-            <a href="#VehicleForm" class="navProperty">Add Vehicle</a>
-            <a href="#FeedbackForm" class="navProperty">Give Feedback</a>
-            <a href="#PlanForm" class="navProperty">Pricing</a>
+            width: 32%;
+            border: solid darkblue;
+            border-radius: 20px;
+            margin-right: 0.5%;
+        }
+
+        .purchaseButton {
+            color: darkblue;
+        }
+
+        /*styling for Nav bar */
+        .navProperty {
+            margin-left: 2%;
+            color: white;
+        }
+
+        #Bicycle {
+            float: left;
+        }
+
+        #TwoWheeler {
+            float: left;
+        }
+
+        #FourWheeler {
+            float: left;
+        }
+    </style>
+</head>
+
+<body background="pattern.jpg">
+    </-- Nav Bar -->
+    <div id="NavBar" class="NavBar">
+        <a href="#EmployeeForm" class="navProperty">Add Employee</a>
+        <a href="#VehicleForm" class="navProperty">Add Vehicle</a>
+        <a href="#FeedbackForm" class="navProperty">Give Feedback</a>
+        <a href="#PlanForm" class="navProperty">Pricing</a>
+    </div>
+
+    <div id="Heading" align="center">
+        <h1>Metacube Parking Portal</h1><br />
+        <img src="parking.jpg" width="100%">
+    </div>
+    </--Employee Form-->
+    <div id="EmployeeForm">
+        <button type="button" class="collapsible">
+            <h2>Employee Registration Form</h2>
+        </button>
+        <div class="content" align="center">
+            <form method="POST">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="FirstName">First Name : *</label>
+                        </td>
+                        <td>
+                            <input type="text" class="blueBox" placeholder="First Name" id="FirstName"
+                                pattern="[a-zA-Z]+" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="LastName">Last Name : *</label>
+                        </td>
+                        <td>
+                            <input type="text" class="blueBox" placeholder="Last Name" id="LastName" pattern="[a-zA-Z]+"
+                                required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Select Gender : *
+                        </td>
+                        <td>
+                            <input type="radio" class="blueBox" name="Gender" id="Male" value="Male">
+                            <label for="Male">Male</label>
+                            <input type="radio" class="blueBox" name="Gender" id="Female" value="Female">
+                            <label for="Female">Female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="ContactNumber">Contact Number : *</label>
+                        </td>
+                        <td>
+                            <input type="text" class="blueBox" name="number" id="ContactNumber"
+                                placeholder="Contact Number" pattern="[0-9]+" minlength="8" maxlength="10"
+                                required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            Enter Email Id : *
+                            <label for="EmailId">Email id : *</label>
+                        </td>
+                        <td>
+                            <input type="email" class="blueBox" name="email" id="EmailId" placeholder="Email Id"
+                                required><br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Enter Password : *
+                            <label for="Password">Password : *</label>
+                        </td>
+                        <td>
+                            <input type="password" class="blueBox" name="password" id="Password" placeholder="Password"
+                                required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="ConfirmPassword">Confirm Password : *</label>
+                        </td>
+                        <td>
+                            <input type="password" class="blueBox" name="password" id="ConfirmPassword"
+                                placeholder="Confirm Password" required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit Employee Details"></br></br></br></br>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
+    </div>
+    </--Vehicle Form-->
+    <div id="VehicleForm">
+        <button type="button" class="collapsible">
+            <h2>Vehicle Details Form</h2>
+        </button>
+        <div class="content" align="center">
+            <form method="post">
+                <b>Input your Vehicle Details</b>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="VehicleName">Vehicle Name : *</label>
+                        </td>
 
-        <div id="Heading" align="center">
-            <h1>Metacube Parking Portal</h1><br />
-            <img src="parking.jpg" width="100%">
+                        <td>
+                            <input type="text" class="blueBox" placeholder="Vehicle Name" id="VehicleName"
+                                required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Vehicle Type *
+                        </td>
+
+                        <td>
+                            <select class="blueBox" id="VehicleType">
+                                <option value="Bicycle">Bicycle</option>
+                                <option value="Two Wheeler">Two Wheeler</option>
+                                <option value="Four Wheeler">Four Wheeler</option>
+                            </select><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="VehicleNumber">Vehicle Number : *</label>
+                        </td>
+
+                        <td>
+                            <input type="text" class="blueBox" placeholder="Vehicle Number" id="VehicleNumber"
+                                required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="VehicleDetails">Vehicle Details : </label><br /><br />
+                        </td>
+
+                        <td>
+                            <textarea rows="10" class="blueBox" cols="50" id="VehicleDetails"
+                                placeholder="Input Vehicle Details Here" required></textarea><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit Vehicle Details"></br></br></br></br>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
-/*Employee Form*/
-        <div id="EmployeeForm">
-            <button type="button" class="collapsible">
-                <h2>Employee Registration Form</h2>
-            </button>
-            <div class="content" align="center">
-                <form method="POST">
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="FirstName">First Name : *</label>
-                            </td>
-                            <td>
-                                <input type="text" class="blueBox" placeholder="First Name" id="FirstName"
-                                    pattern="[a-zA-Z]+" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="LastName">Last Name : *</label>
-                            </td>
-                            <td>
-                                <input type="text" class="blueBox" placeholder="Last Name" id="LastName" pattern="[a-zA-Z]+"
-                                    required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Select Gender : *
-                            </td>
-                            <td>
-                                <input type="radio" class="blueBox" name="Gender" id="Male" value="Male">
-                                <label for="Male">Male</label>
-                                <input type="radio" class="blueBox" name="Gender" id="Female" value="Female">
-                                <label for="Female">Female</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="ContactNumber">Contact Number : *</label>
-                            </td>
-                            <td>
-                                <input type="text" class="blueBox" name="number" id="ContactNumber"
-                                    placeholder="Contact Number" pattern="[0-9]+" minlength="8" maxlength="10"
-                                    required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td>
-                                Enter Email Id : *
-                                <label for="EmailId">Email id : *</label>
-                            </td>
-                            <td>
-                                <input type="email" class="blueBox" name="email" id="EmailId" placeholder="Email Id"
-                                    required><br /><br />
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                Enter Password : *
-                                <label for="Password">Password : *</label>
-                            </td>
-                            <td>
-                                <input type="password" class="blueBox" name="password" id="Password" placeholder="Password"
-                                    required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="ConfirmPassword">Confirm Password : *</label>
-                            </td>
-                            <td>
-                                <input type="password" class="blueBox" name="password" id="ConfirmPassword"
-                                    placeholder="Confirm Password" required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <input type="submit" value="Submit Employee Details"></br></br></br></br>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
+    </div>
+    </--Feedback Form-->
+    <div id="FeedbackForm">
+        <button type="button" class="collapsible">
+            <h2>Feedback Form</h2>
+        </button>
+        <div class="content" align="center">
+            <form method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="EmployeeId">Employee Id : *</label>
+                        </td>
+                        <td>
+                            <input type="text" class="blueBox" placeholder="EmployeeId" required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Subject">Subject : *</label>
+                        </td>
+                        <td>
+                            <input type="text" class="blueBox" placeholder="Subject" id="Subject" required><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Message">Message : *</label><br /><br />
+                        </td>
+                        <td>
+                            <textarea rows="10" class="blueBox" cols="50" id="Message" placeholder="Input Message Here"
+                                required></textarea><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit Feedback"></br></br></br></br>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
-/*Vehicle Form*/
-        <div id="VehicleForm">
-            <button type="button" class="collapsible">
-                <h2>Vehicle Details Form</h2>
-            </button>
-            <div class="content" align="center">
-                <form method="post">
-                    <b>Input your Vehicle Details</b>
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="VehicleName">Vehicle Name : *</label>
-                            </td>
-
-                            <td>
-                                <input type="text" class="blueBox" placeholder="Vehicle Name" id="VehicleName"
-                                    required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Vehicle Type *
-                            </td>
-
-                            <td>
-                                <select class="blueBox" id="VehicleType">
-                                    <option value="Bicycle">Bicycle</option>
-                                    <option value="Two Wheeler">Two Wheeler</option>
-                                    <option value="Four Wheeler">Four Wheeler</option>
-                                </select><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="VehicleNumber">Vehicle Number : *</label>
-                            </td>
-
-                            <td>
-                                <input type="text" class="blueBox" placeholder="Vehicle Number" id="VehicleNumber"
-                                    required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="VehicleDetails">Vehicle Details : </label><br /><br />
-                            </td>
-
-                            <td>
-                                <textarea rows="10" class="blueBox" cols="50" id="VehicleDetails"
-                                    placeholder="Input Vehicle Details Here" required></textarea><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <input type="submit" value="Submit Vehicle Details"></br></br></br></br>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        </div>
-/*Feedback Form*/
-        <div id="FeedbackForm">
-            <button type="button" class="collapsible">
-                <h2>Feedback Form</h2>
-            </button>
-            <div class="content" align="center">
-                <form method="post">
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="EmployeeId">Employee Id : *</label>
-                            </td>
-                            <td>
-                                <input type="text" class="blueBox" placeholder="EmployeeId" required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="Subject">Subject : *</label>
-                            </td>
-                            <td>
-                                <input type="text" class="blueBox" placeholder="Subject" id="Subject" required><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="Message">Message : *</label><br /><br />
-                            </td>
-                            <td>
-                                <textarea rows="10" class="blueBox" cols="50" id="Message" placeholder="Input Message Here"
-                                    required></textarea><br /><br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <input type="submit" value="Submit Feedback"></br></br></br></br>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        </div>
-/*Plan form*/
-        <div id="PlanForm">
-            <button type="button" class="collapsible">
-                <h2>Plan Form</h2>
-            </button>
-            <div class="content">
-                <form method="post">
-                    <b>Select Any One Plan : *</b><br /><br />
-/*Bicycle*/
-                    <div id="Bicycle" class="Plans" align="center">
-                        <h3>Bicycle</h3>
-                        <div class="circle">
-                            <b>$100</br>/month</b>
-                        </div>
-                        <input type="radio" class="blueBox" name="Plan" id="BicyclePlan1" value="BicyclePlan1"> <label
-                            for="BicyclePlan1">Daily Plan Rs. 5 per Day</label><br />
-                        <input type="radio" class="blueBox" name="Plan" id="BicyclePlan2" value="BicyclePlan2"> <label
-                            for="BicyclePlan2">Weekly Plan Rs. 100 per Week</label><br />
-                        <input type="radio" class="blueBox" name="Plan" id="BicyclePlan3" value="BicyclePlan3"> <label
-                            for="BicyclePlan3">Monthly Plan Rs. 500 per Month</label><br /><br />
-                        <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
+    </div>
+    </--Plan form-->
+    <div id="PlanForm">
+        <button type="button" class="collapsible">
+            <h2>Plan Form</h2>
+        </button>
+        <div class="content">
+            <form method="post">
+                <b>Select Any One Plan : *</b><br /><br />
+                </--Bicycle-->
+                <div id="Bicycle" class="Plans" align="center">
+                    <h3>Bicycle</h3>
+                    <div class="circle">
+                        <b>$100</br>/month</b>
                     </div>
-/*Two Wheeler*/
-                    <div id="TwoWheeler" class="Plans" align="center">
-                        <h3>Two Wheeler</h3>
-                        <div class="circle">
-                            <b>$200</br>/month</b>
-                        </div>
-                        <input type="radio" class="blueBox" name="Plan" id="TwoWheeler1" value="TwoWheeler1"> <label
-                            for="TwoWheeler1">Daily Plan Rs. 10 per Day</label><br />
-                        <input type="radio" class="blueBox" name="Plan" id="TwoWheeler2" value="TwoWheeler2"> <label
-                            for="TwoWheeler2">Weekly Plan Rs. 200 per Week</label><br />
-                        <input type="radio" class="blueBox" name="Plan" id="TwoWheeler3" value="TwoWheeler3"> <label
-                            for="TwoWheeler3">Monthly Plan Rs. 1000 per Month</label><br /><br />
-                        <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
+                    <input type="radio" class="blueBox" name="Plan" id="BicyclePlan1" value="BicyclePlan1"> <label
+                        for="BicyclePlan1">Daily Plan Rs. 5 per Day</label><br />
+                    <input type="radio" class="blueBox" name="Plan" id="BicyclePlan2" value="BicyclePlan2"> <label
+                        for="BicyclePlan2">Weekly Plan Rs. 100 per Week</label><br />
+                    <input type="radio" class="blueBox" name="Plan" id="BicyclePlan3" value="BicyclePlan3"> <label
+                        for="BicyclePlan3">Monthly Plan Rs. 500 per Month</label><br /><br />
+                    <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
+                </div>
+                </--Two Wheeler-->
+                <div id="TwoWheeler" class="Plans" align="center">
+                    <h3>Two Wheeler</h3>
+                    <div class="circle">
+                        <b>$200</br>/month</b>
                     </div>
-/*Four Wheeler*/
-                    <div id="FourWheeler" class="Plans" align="center">
-                        <h3>Four Wheeler</h3>
-                        <div class="circle">
-                            <b>$500</br>/month</b>
-                        </div>
-                        <input type="radio" class="blueBox" name="Plan" id="FourWheeler1" value="FourWheeler1"> <label
-                            for="FourWheeler1">Daily Plan Rs. 20 per Day</label><br />
-                        <input type="radio" class="blueBox" name="Plan" id="FourWheeler2" value="FourWheeler2"> <label
-                            for="FourWheeler2">Weekly Plan Rs. 400 per Week</label><br />
-                        <input type="radio" class="blueBox" name="Plan" id="FourWheeler3" value="FourWheeler3"> <label
-                            for="FourWheeler3">Monthly Plan Rs. 2000 per Month</label><br /><br />
-                        <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
+                    <input type="radio" class="blueBox" name="Plan" id="TwoWheeler1" value="TwoWheeler1"> <label
+                        for="TwoWheeler1">Daily Plan Rs. 10 per Day</label><br />
+                    <input type="radio" class="blueBox" name="Plan" id="TwoWheeler2" value="TwoWheeler2"> <label
+                        for="TwoWheeler2">Weekly Plan Rs. 200 per Week</label><br />
+                    <input type="radio" class="blueBox" name="Plan" id="TwoWheeler3" value="TwoWheeler3"> <label
+                        for="TwoWheeler3">Monthly Plan Rs. 1000 per Month</label><br /><br />
+                    <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
+                </div>
+                </--Four Wheeler-->
+                <div id="FourWheeler" class="Plans" align="center">
+                    <h3>Four Wheeler</h3>
+                    <div class="circle">
+                        <b>$500</br>/month</b>
                     </div>
-                </form>
-            </div>
+                    <input type="radio" class="blueBox" name="Plan" id="FourWheeler1" value="FourWheeler1"> <label
+                        for="FourWheeler1">Daily Plan Rs. 20 per Day</label><br />
+                    <input type="radio" class="blueBox" name="Plan" id="FourWheeler2" value="FourWheeler2"> <label
+                        for="FourWheeler2">Weekly Plan Rs. 400 per Week</label><br />
+                    <input type="radio" class="blueBox" name="Plan" id="FourWheeler3" value="FourWheeler3"> <label
+                        for="FourWheeler3">Monthly Plan Rs. 2000 per Month</label><br /><br />
+                    <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
+                </div>
+            </form>
         </div>
-/*Footer image*/
-        <div id="FooterImage" align="center">
-            <img src="thankyou.jpg" width="500px">
-        </div>
-/*Script for controlling collapsible items button click*/
-        <script>
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
-                });
-            }
-        </script>
-    </body>
+    </div>
+    </--Footer image-->
+    <div id="FooterImage" align="center">
+        <img src="thankyou.jpg" width="500px">
+    </div>
+    </--Script for controlling collapsible items button click-->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
 </html>
