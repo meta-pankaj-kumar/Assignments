@@ -2,6 +2,7 @@
 
     <head>
         <style>
+		/* styling for collapsible */
             .collapsible {
                 background-color: darkblue;
                 color: white;
@@ -13,7 +14,7 @@
                 outline: none;
                 font-size: 15px;
             }
-
+		
             .active,
             .collapsible:hover {
                 background-color: white;
@@ -34,14 +35,14 @@
                 /* Unicode character for "minus" sign (-) */
                 color: darkblue;
             }
-
+/*styling for content*/
             .content {
                 padding: 0 18px;
                 display: none;
                 overflow: hidden;
                 background-color: white;
             }
-
+/*styling for blue content*/
             .blueBox {
                 border: 2px solid darkblue;
                 border-radius: 4px;
@@ -56,7 +57,7 @@
                 padding-top: 20px;
 
             }
-
+/*styling for plans */
             .Plans {
 
                 width: 32%;
@@ -68,7 +69,7 @@
             .purchaseButton {
                 color: darkblue;
             }
-
+/*styling for Nav bar */
             .navProperty {
                 margin-left: 2%;
                 color: white;
@@ -89,16 +90,19 @@
     </head>
 
     <body background="pattern.jpg">
+/*Nav Bar */ 
         <div id="NavBar" class="blueBox" style="background-color: darkblue">
             <a href="#EmployeeForm" class="navProperty">Add Employee</a>
             <a href="#VehicleForm" class="navProperty">Add Vehicle</a>
             <a href="#FeedbackForm" class="navProperty">Give Feedback</a>
             <a href="#PlanForm" class="navProperty">Pricing</a>
         </div>
+
         <div id="Heading" align="center">
             <h1>Metacube Parking Portal</h1><br />
             <img src="parking.jpg" width="100%">
         </div>
+/*Employee Form*/
         <div id="EmployeeForm">
             <button type="button" class="collapsible">
                 <h2>Employee Registration Form</h2>
@@ -185,6 +189,7 @@
                 </form>
             </div>
         </div>
+/*Vehicle Form*/
         <div id="VehicleForm">
             <button type="button" class="collapsible">
                 <h2>Vehicle Details Form</h2>
@@ -245,6 +250,7 @@
                 </form>
             </div>
         </div>
+/*Feedback Form*/
         <div id="FeedbackForm">
             <button type="button" class="collapsible">
                 <h2>Feedback Form</h2>
@@ -286,6 +292,7 @@
                 </form>
             </div>
         </div>
+/*Plan form*/
         <div id="PlanForm">
             <button type="button" class="collapsible">
                 <h2>Plan Form</h2>
@@ -293,6 +300,7 @@
             <div class="content">
                 <form method="post">
                     <b>Select Any One Plan : *</b><br /><br />
+/*Bicycle*/
                     <div id="Bicycle" class="Plans" align="center">
                         <h3>Bicycle</h3>
                         <div class="circle">
@@ -306,6 +314,7 @@
                             for="BicyclePlan3">Monthly Plan Rs. 500 per Month</label><br /><br />
                         <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
                     </div>
+/*Two Wheeler*/
                     <div id="TwoWheeler" class="Plans" align="center">
                         <h3>Two Wheeler</h3>
                         <div class="circle">
@@ -319,6 +328,7 @@
                             for="TwoWheeler3">Monthly Plan Rs. 1000 per Month</label><br /><br />
                         <input type="button" class="purchaseButton" value="PURCHASE NOW"><br /><br />
                     </div>
+/*Four Wheeler*/
                     <div id="FourWheeler" class="Plans" align="center">
                         <h3>Four Wheeler</h3>
                         <div class="circle">
@@ -335,9 +345,11 @@
                 </form>
             </div>
         </div>
+/*Footer image*/
         <div id="FooterImage" align="center">
             <img src="thankyou.jpg" width="500px">
         </div>
+/*Script for controlling collapsible items button click*/
         <script>
             var coll = document.getElementsByClassName("collapsible");
             var i;
