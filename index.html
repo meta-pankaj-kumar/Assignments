@@ -1,13 +1,14 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         .upperBackground {
             background-size: 100% 100%;
             background-repeat: round;
             background-image: url('homebg.png');
-            border: solid black;
-            height: 110%;
+            height: 130%;
         }
 
         .header {
@@ -21,8 +22,9 @@
 
         .navBar {
             margin-left: 26%;
-
+            width: 35%;
             color: white;
+            float: left;
         }
 
         .navText {
@@ -30,7 +32,6 @@
             text-decoration: none;
             padding-right: 2%;
         }
-
 
         .text {
             color: white;
@@ -52,7 +53,7 @@
         }
 
         .topSection {
-            margin-top: 2%;
+            margin-top: 10%;
         }
 
         .photoFirst {
@@ -80,7 +81,7 @@
             margin-bottom: 0%;
         }
 
-        .aaa {
+        .sections {
             margin: auto;
             width: auto;
         }
@@ -133,11 +134,6 @@
             font-size: 150%;
         }
 
-
-
-
-
-
         .screenshotSecond {
             width: 100%;
             height: 100%;
@@ -177,13 +173,80 @@
             margin: 0px;
         }
 
-        .reviewImage{
+        .reviewImage {
             padding-top: 5%;
             margin-left: 22%;
         }
 
-        .beforeFooter{
-            background-color: rgb(54, 54, 151)
+        .beforeFooter {
+            margin-top: 10%;
+            background-color: #3c85ce;
+            width: 100%;
+            height: 71%;
+        }
+
+        .leftDiv {
+            float: left;
+            width: 30%;
+            margin-left: 15%;
+            margin-top: 8%;
+        }
+
+        .rightDiv {
+            float: left;
+            width: 40%;
+            margin-top: 8%;
+
+        }
+
+        .headingThird {
+            color: white;
+            font-size: 250%;
+            font-weight: 400;
+        }
+
+        .textThird {
+            color: white;
+            font-size: 150%;
+            font-weight: 400;
+        }
+
+        .appStore {
+            float: left;
+            margin-left: 2%;
+        }
+
+        .footer {
+            background-color: rgb(34, 65, 83);
+            height:30%;
+        }
+
+        .footerLogo {
+            float: left;
+            margin-left: 15%;
+            padding-top: 3%;
+        }
+
+        .footerLine {
+            width: 100%;
+            margin: auto;
+        }
+
+        .rights {
+            margin-top: 8%;
+            color: gray;
+        }
+
+        .icon {
+            float: left;
+            margin-left: 2%;
+            width: 1%;
+            margin-top: 3%;
+        }
+
+        .fa {
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -200,6 +263,15 @@
                 <a href="#reviews" class="navText">Reviews</a>
                 <a href="#download" class="navText">Download</a>
             </nav>
+            <div class="icon" style="margin-top: 0.4%">
+                <a href="" class="fa fa-facebook"></a>
+            </div>
+            <div class="icon" style="margin-top: 0.4%">
+                <a href="" class="fa fa-instagram"></a>
+            </div>
+            <div class="icon" style="margin-top: 0.4%">
+                <a href="" class="fa fa-google"></a>
+            </div>
         </header>
         <div class="topSection">
             <div class="mainText">
@@ -212,7 +284,7 @@
             </div>
         </div>
     </section>
-    <section class="aaa">
+    <section class="sections">
         <p class="heading">Perfect Features</p>
         <p class="textSubHeading">Only Necessary</p>
     </section>
@@ -224,7 +296,7 @@
         <img src="test1.png">
         <img src="drag1.png">
     </section>
-    <section class="aaa">
+    <section class="sections">
         <p class="heading">Screenshots</p>
         <p class="textSubHeading">The brightest images</p>
     </section>
@@ -278,45 +350,62 @@
     </section>
 
     <section>
-            <div class="reviews">
-                    <p class="heading">What reviews are saying</p>
-                    <p class="textFirst">Reviews</p>
-            </div>
+        <div class="reviews">
+            <p class="heading">What reviews are saying</p>
+            <p class="textFirst">Reviews</p>
+        </div>
     </section>
 
-    <section class = "reviewImage">
-            <img src="reviews.png">
+    <section class="reviewImage">
+        <img src="reviews.png">
     </section>
-    
-    <section class = "beforeFooter">
-            <div class="download">
-                    <div>
-                        <p class="heading">How Download the app?</p>
-                        <p class="text">Just download the app from the store. Simple, nice and user-friendly application of the
-                            weather. Only relevent and useful information.</p>
-                        <div>
-                            <img src="appstor.png">
-                        </div>
-                        <div>
-                            <img src="googleplay.png">
-                        </div>
-                    </div>
-                    <div>
-                        <img src="appdownload1.png">
-                    </div>
-                </div>
+
+    <section class="beforeFooter">
+        <div class="leftDiv">
+            <div class="upperSection">
+                <p class="headingThird">How Download the app?</p>
+                <p class="textThird">Just download the app from the store. Simple, nice and
+                    user-friendly application of the
+                    weather. Only relevent and useful information.</p>
+            </div>
+            <div class="appStore">
+                <img src="appstor.png">
+            </div>
+            <div class="appStore">
+                <img src="googleplay.png">
+            </div>
+        </div>
+        <div class="rightDiv">
+            <img src="appdownload1.png">
+        </div>
     </section>
-    
-    <footer>
-        <img src="footer-logo.png">
-        <a href="">Home</a>
-        <a href="#features">Features</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#download">Download</a>
-        <a href="https://www.facebook.com"></a>
-        <a href="https://www.instagram.com"></a>
-        <a href="https://account.google.com"></a>
-        <p class="text">All Rights Reserved</p>
+
+    <footer class="footer" style="border: solid rgb(34, 65, 83)">
+        <section>
+            <div class="footerLogo">
+                <img src="footer-logo.png">
+            </div>
+            <nav class="navBar" style=" margin-top: 3%; margin-left: 18% ">
+                <a href="" class="navText">Home</a>
+                <a href="#features" class="navText">Features</a>
+                <a href="#reviews" class="navText">Reviews</a>
+                <a href="#download" class="navText">Download</a>
+            </nav>
+            <div class="icon">
+                <a href="" class="fa fa-facebook"></a>
+            </div>
+            <div class="icon">
+                <a href="" class="fa fa-instagram"></a>
+            </div>
+            <div class="icon">
+                <a href="" class="fa fa-google"></a>
+            </div>
+        </section>
+        <section>
+            <div class="rights" align="center">
+                <p>All Rights Reserved</p>
+            </div>
+        </section>
     </footer>
 </body>
 
