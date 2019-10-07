@@ -17,5 +17,4 @@ public class EadSession11AssignmentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EadSession11AssignmentApplication.class, args);
 	}
-
 }

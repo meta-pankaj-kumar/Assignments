@@ -32,10 +32,10 @@ public class EadSession11AssignmentApplicationTests {
 	@Before
 	public void initialize() {
 		student = new StudentForm();
-		student.setEmail("jugal1@metacube.com");
-		student.setFirstName("Jugal");
-		student.setLastName("Kukreja");
-		student.setFatherName("Anil Kukreja");
+		student.setEmail("aaa@metacube.com");
+		student.setFirstName("aaa");
+		student.setLastName("aaa");
+		student.setFatherName("aaa");
 		student.setStudentAge("12");
 		student.setStudentClass("8");
 	}
@@ -45,11 +45,4 @@ public class EadSession11AssignmentApplicationTests {
 	{
 		assertEquals(0, studentDao.add(DTOUtil.map(student, Student.class)));
 	}
-	
-	@Test
-	public void testgetStudents()
-	{
-		assertEquals("jugal.kukreja@metacube.com", studentDao.getAll().get(0).getEmail());
-	}
-
 }
