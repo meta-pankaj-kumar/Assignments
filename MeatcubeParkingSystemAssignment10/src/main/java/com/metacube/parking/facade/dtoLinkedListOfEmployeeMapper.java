@@ -6,10 +6,17 @@ import java.util.LinkedList;
 
 import org.springframework.jdbc.core.RowMapper;
 import com.metacube.parking.dto.dtoEmployee;
-
+/**
+ * 
+ * @author Pankaj
+ *
+ */
 public class dtoLinkedListOfEmployeeMapper implements RowMapper<LinkedList<dtoEmployee>> {
 
 	@Override
+	/**
+	 * 
+	 */
 	public LinkedList<dtoEmployee> mapRow(ResultSet result, int rowNum) throws SQLException {
 		LinkedList<dtoEmployee> list = new LinkedList<dtoEmployee>();
 		do

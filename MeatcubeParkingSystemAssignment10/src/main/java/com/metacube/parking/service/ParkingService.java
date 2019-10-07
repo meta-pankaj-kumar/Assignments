@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.LinkedList;
 
+import org.springframework.dao.DuplicateKeyException;
+
 import com.metacube.parking.dao.EmployeeDAO;
 import com.metacube.parking.dao.ParkingDAO;
 import com.metacube.parking.dao.PlanDAO;
@@ -20,17 +22,13 @@ public class ParkingService {
 	 * @return boolean true
 	 * @throws SQLIntegrityConstraintViolationException
 	 */
-	public boolean addEmployee(Employee employee) throws SQLIntegrityConstraintViolationException{
+	public boolean addEmployee(Employee employee) throws DuplicateKeyException{
 		
 		EmployeeDAO db = new EmployeeDAO();
 		try {
 			db.insertEmployee(employee);
-		} catch (SQLIntegrityConstraintViolationException e) {
+		} catch (DuplicateKeyException e) {
 			throw e;
-		} catch (SQLException e) {
-			System.out.println(e);
-		} catch (Exception e) {
-			System.out.println(e);
 		}
 		return true;
 	}

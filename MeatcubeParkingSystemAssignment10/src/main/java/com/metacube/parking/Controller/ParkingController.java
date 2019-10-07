@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLIntegrityConstraintViolationException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -72,7 +72,7 @@ public class ParkingController {
 				try {
 					employee.setProfilePhtotoUrl("/images/default.jpg");
 					service.addEmployee(employee);
-				} catch (SQLIntegrityConstraintViolationException e) {
+				} catch (DuplicateKeyException e) {
 					FieldError error = new FieldError("email","email","Email Already in use");
 					bindingResult.addError(error);
 					return "Registration";

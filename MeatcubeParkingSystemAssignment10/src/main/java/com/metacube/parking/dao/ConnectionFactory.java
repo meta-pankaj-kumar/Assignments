@@ -2,13 +2,16 @@ package com.metacube.parking.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+/**
+ * 
+ * @author Pankaj
+ *
+ */
 public class ConnectionFactory {
 
-	/** 
-	 * @return object of Connection class
-	 * @throws Exception
-	 *             when driver class not found or can't create connection
+	/**
+	 * 
+	 * @return Connection
 	 */
 	public static Connection getConnection() {
 		String driver = "com.mysql.jdbc.Driver";
