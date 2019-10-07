@@ -61,8 +61,7 @@ public class AppController {
 	 * @return {String} view name
 	 */
 	@GetMapping("/failurePage")
-	public String showFailurePage()
-	{
+	public String showFailurePage(){
 		return "students/failure_page";
 	}
 	
