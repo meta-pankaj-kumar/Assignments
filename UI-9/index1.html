@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+<script src = "script.js"></script>
+
+	<title>Metacube Parking Portal</title>
+</head>
+
+<body background="pattern.jpg">
+
+	<div id="index" align="center" background="Photo.jpg">
+		<h1>
+			<font size="10">Welcome to Metacube Parking Portal</font>
+		</h1>
+		</br>
+		<h1>"The Road to Success Is Dotted With </br>Many Tempting Parking Places"</h1>
+
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- Will
+		Rogers</br>
+		</br><img src="Parking.jpg" width="30%"></br></br></br>
+		<input type="button" id="indexButton" value="Register New Vehicle" onclick="goToRegForm()">
+
+	</div>
+	<div id="top" align="center" style="display:none">
+		<h1>Metacube Parking Portal</h1>
+	</div>
+	<div id="RegistrationForm" align="center" style="display:none">
+		<h1>Employee Registration Form</h1>
+		<form method="get">
+			<table>
+				<tr>
+					<th>
+						Input Name :
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<label for="FirstName">First Name : *</label>
+					</td>
+					<td>
+						<input type="text" placeholder="First Name" id="FirstName" pattern="[a-zA-Z]+">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="LastName">Last Name : *</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Last Name" id="LastName" pattern="[a-zA-Z]+">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						Select Gender *
+					</th>
+				</tr>
+				<tr>
+					<div id="Gender">
+						<td>
+							<input type="radio" name="Gender" id="Male" value="Male"> <label for="Male">Male</label>
+						</td>
+						<td>
+							<input type="radio" name="Gender" id="Female" value="Female"><label
+								for="Female">Female</label>
+						</td>
+					</div>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="EmployeeId">Employee Id : *</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Employee Id" id="EmployeeId">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="EmailId">Email id : *</label>
+					</td>
+					<td>
+						<input type="email" name="email" id="EmailId" placeholder="Email Id">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						Password
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<label for="Password">Password : *</label>
+					</td>
+					<td>
+						<input type="password" name="password" id="Password" placeholder="Password">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="ConfirmPassword">Confirm Password : *</label>
+					</td>
+					<td>
+						<input type="password" name="password" id="ConfirmPassword" placeholder="Confirm Password">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="ContactNumber">Contact Number : *</label>
+					</td>
+					<td>
+						<input type="text" name="number" id="ContactNumber" placeholder="Contact Number"
+							pattern="[0-9]+" minlength="8" maxlength="10">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+			</table>
+			<input type="button" value="Register" onclick="submitRegForm()"></br>
+		</form>
+	</div>
+
+	<div id="VehicleForm" align="center" style="display:none">
+		<h1>Vehicle Details Form</h1>
+		<form method="get">
+			<table>
+				<tr>
+					<th>
+						Registration Number :
+					</th>
+					<th>
+						<p id="RegNo"></p>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<label for="VehicleName">Vehicle Name : *</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Vehicle Name" id="VehicleName">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Vehicle Type *
+					</td>
+					<td>
+						<select id="VehicleType">
+							<option value="">Select</option>
+							<option value="Bicycle">Bicycle</option>
+							<option value="Two Wheeler">Two Wheeler</option>
+							<option value="Four Wheeler">Four Wheeler</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="VehicleNumber">Vehicle Number : *</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Vehicle Number" id="VehicleNumber">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="VehicleDetails">Vehicle Details : </label>
+					</td>
+				</tr>
+
+			</table>
+			<textarea rows="10" cols="50" id="VehicleDetails"
+				placeholder="Input Vehicle Details Here"></textarea></br></br>
+			<input type="button" value="Submit Details" onclick="submitVehicleForm()"></br>
+		</form>
+	</div>
+	<div id="PlanForm" align="center" style="display:none">
+		<h1>Vehicle Plan Form</h1>
+		<form method="get">
+			<table>
+				<tr>
+					<th>
+						Registration Number :
+					</th>
+					<th>
+						<p id="RegistrationNumber"></p>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						Vehicle Selected :
+					</th>
+					<th>
+						<p id="VechicleId"></p>
+					</th>
+				</tr>
+
+				<tr>
+					<td>
+						Currency : *
+					</td>
+					<td>
+						<select id="Currency" onchange="priceCalculator()">
+							<option value="">SELECT</option>
+							<option value="INR">INR</option>
+							<option value="USD">USD</option>
+							<option value="YEN">YEN</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Select Plan : *
+					</td>
+				</tr>
+				<tr>
+					<div id="Plan">
+						<td>
+							<input type="radio" name="Plan" id="WeeklyPlan" value="Weekly Plan">
+							<label for="WeeklyPlan">Weekly Pass</label></br>
+						</td>
+						<td>
+							<input type="radio" name="Plan" id="MonthlyPlan" value="Monthly Plan">
+							<label for="MonthlyPlan">Monthly Pass</label></br>
+						</td>
+						<td>
+							<input type="radio" name="Plan" id="YearlyPlan" value="Yearly Plan">
+							<label for="YearlyPlan">Yearly Pass</label></br>
+						</td>
+					</div>
+				</tr>
+				<tr>
+					<td>
+						<p id="WeeklyPrice"></p>
+					</td>
+					<td>
+						<p id="MonthlyPrice"></p>
+					</td>
+					<td>
+						<p id="YearlyPrice"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						</br>
+					</td>
+				</tr>
+			</table>
+			<input type="button" value="Get Pass" onclick="submitPlanForm()"></br>
+		</form>
+	</div>
+	<div id="PreConfirmForm" align="center" style="display:none">
+		<h1>Confirmation Form</h1>
+		<form method="get">
+			<table>
+				<tr>
+					<th>
+						Registration Number :
+					</th>
+					<th>
+						<p id="RegistrationNumberPreFinalForm"></p>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						First Name :
+					</td>
+					<td>
+						<p id="FirstNameDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Last Name :
+					</td>
+					<td>
+						<p id="LastNameDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Gender :
+					</td>
+					<td>
+						<p id="GenderDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Email id :
+					</td>
+					<td>
+						<p id="EmailDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Contact Number :
+					</td>
+					<td>
+						<p id="ContactNumberDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Vehicle Type :
+					</td>
+					<td>
+						<p id="VehicleTypeDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Vehicle Name :
+					</td>
+					<td>
+						<p id="VehicleNameDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Vehicle Number :
+					</td>
+					<td>
+						<p id="VehicleNumberDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Plan Selected :
+					</td>
+					<td>
+						<p id="PlanDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Currency Opted :
+					</td>
+					<td>
+						<p id="CurrencyDisplay"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value="Confirm Details" onclick="submitPreConfirmForm()">
+					</td>
+					<td>
+						<input type="button" value="Cancel" onclick="cancelForm()">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="ConfirmForm" align="center" style="display:none">
+		<h1>Congratulations Your Vehicle Has Been Registered with Metacube Parking Services</h1>
+		<form method="get">
+			<table>
+				<tr>
+					<th>
+						Registration Number :
+					</th>
+					<th>
+						<p id="RegistrationNumberFinalForm"></p>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						Vehicle Number :
+					</td>
+					<td>
+						<p id="VehicleNumberFinalForm"></p>
+					</td>
+				</tr>
+			</table>
+			Your Vehicle Has Been Successfully Registered With Us </br></br>
+			Thank You For Using Metacube Parking System</br></br>
+			Have A Nice Day</br>
+		</form>
+	</div>
+</body>
+
+</html>
